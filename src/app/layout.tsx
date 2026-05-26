@@ -14,13 +14,13 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://dotnexus.nl"),
-  title: "DotNexus — Strategie, operatie & marketing",
+  title: "DotNexus: Strategie, operatie & marketing",
   description:
     "DotNexus adviseert en voert uit: strategisch advies, bedrijfsvoering en organic social marketing in één bundel voor bedrijven die willen groeien.",
   openGraph: {
     title: "DotNexus",
     description:
-      "Strategie, bedrijfsvoering en organic social marketing — één bundel voor groei.",
+      "Strategie, bedrijfsvoering en organic social marketing in één bundel voor groei.",
     url: "https://dotnexus.nl",
     siteName: "DotNexus",
     locale: "nl_NL",

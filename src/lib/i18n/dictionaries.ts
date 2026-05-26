@@ -2,7 +2,7 @@ import type { Dictionary, Locale } from "./types";
 
 const nl: Dictionary = {
   meta: {
-    title: "DotNexus — Strategie, operatie & marketing",
+    title: "DotNexus: Strategie, operatie & marketing",
     description:
       "DotNexus adviseert en voert uit: strategisch advies, bedrijfsvoering en organic social marketing in één bundel voor bedrijven die willen groeien.",
   },
@@ -13,11 +13,11 @@ const nl: Dictionary = {
     contact: "Contact",
   },
   hero: {
-    eyebrow: "Growth bureau · Amsterdam",
+    eyebrow: "Growth bureau",
     title: "De volgende stap",
     titleAccent: "in één beweging.",
     subtitle:
-      "Wij combineren strategisch advies, bedrijfsvoering en marketing tot één dynamische bundel — creatief, vooruitstrevend en gericht op meetbare groei.",
+      "Wij combineren strategisch advies, bedrijfsvoering en marketing tot één dynamische bundel: creatief, vooruitstrevend en gericht op meetbare groei.",
     ctaPrimary: "Plan een gesprek",
     ctaSecondary: "Bekijk ons werk",
     stats: [
@@ -30,7 +30,7 @@ const nl: Dictionary = {
     label: "Diensten",
     title: "Advies én uitvoering",
     subtitle:
-      "Geen losse slides. Wij denken mee, sturen bij en zetten door — van strategie tot dagelijkse operatie en zichtbaarheid.",
+      "Geen losse slides. Wij denken mee, sturen bij en zetten door, van strategie tot dagelijkse operatie en zichtbaarheid.",
     items: [
       {
         title: "Strategisch advies",
@@ -47,7 +47,7 @@ const nl: Dictionary = {
       {
         title: "Organic social marketing",
         description:
-          "Content die blijft hangen — authentiek, consistent en gebouwd voor algoritmes én mensen. Geen advertentie-budget, wel momentum.",
+          "Content die blijft hangen: authentiek, consistent en gebouwd voor algoritmes én mensen. Geen advertentiebudget, wel momentum.",
         tags: ["Content", "Social", "Community"],
       },
     ],
@@ -56,7 +56,7 @@ const nl: Dictionary = {
     label: "Aanpak",
     title: "Eén bundel. Drie disciplines.",
     subtitle:
-      "De kracht van DotNexus zit in de combinatie: strategie, operatie en marketing lopen bij ons niet parallel — ze versterken elkaar.",
+      "De kracht van DotNexus zit in de combinatie: strategie, operatie en marketing lopen bij ons niet parallel, ze versterken elkaar.",
     pillars: [
       {
         title: "Creatief",
@@ -68,7 +68,7 @@ const nl: Dictionary = {
       },
       {
         title: "Dynamisch",
-        description: "Snel schakelen, testen, optimaliseren — groei is geen statisch plan.",
+        description: "Snel schakelen, testen en optimaliseren. Groei is geen statisch plan.",
       },
     ],
     bundle: {
@@ -81,7 +81,7 @@ const nl: Dictionary = {
     label: "Marketing",
     title: "Organic social als motor",
     subtitle:
-      "Wij geloven in owned attention: content die vertrouwen opbouwt, bereik vergroot en conversie voedt — zonder afhankelijkheid van paid spend.",
+      "Wij geloven in owned attention: content die vertrouwen opbouwt, bereik vergroot en conversie voedt, zonder afhankelijkheid van paid spend.",
     points: [
       "Contentstrategie afgestemd op jouw merk en doelgroep",
       "Productie en publicatie met consistente cadans",
@@ -95,30 +95,30 @@ const nl: Dictionary = {
     subtitle:
       "Een selectie van projecten waar strategie, operatie en marketing samenkomen.",
     project: "Masking Master",
-    role: "Strategie · Branding · Organic social · Groei",
+    role: "Strategie, branding, B2C/B2B positionering en internationale groei",
     visit: "Bekijk project",
     metrics: [
-      { value: "B2B", label: "Positionering" },
+      { value: "B2C en B2B", label: "Positionering" },
       { value: "Social", label: "Content engine" },
-      { value: "NL", label: "Markt focus" },
+      { value: "Global", label: "Markt focus" },
     ],
   },
   cta: {
     title: "Klaar voor de volgende stap?",
     subtitle:
-      "Vertel ons waar je staat — wij denken vrijblijvend mee over wat de slimste beweging is.",
+      "Vertel ons waar je staat. Wij denken vrijblijvend mee over wat de slimste beweging is.",
     button: "Neem contact op",
     email: "hello@dotnexus.nl",
   },
   footer: {
-    tagline: "Strategie · Operatie · Organic marketing",
+    tagline: "Strategie, operatie en organic marketing",
     rights: "Alle rechten voorbehouden.",
   },
 };
 
 const en: Dictionary = {
   meta: {
-    title: "DotNexus — Strategy, operations & marketing",
+    title: "DotNexus: Strategy, operations & marketing",
     description:
       "DotNexus advises and executes: strategic consulting, business operations, and organic social marketing in one bundle for companies ready to grow.",
   },
@@ -129,11 +129,11 @@ const en: Dictionary = {
     contact: "Contact",
   },
   hero: {
-    eyebrow: "Growth bureau · Amsterdam",
+    eyebrow: "Growth agency",
     title: "The next step",
     titleAccent: "in one motion.",
     subtitle:
-      "We combine strategic advice, business operations, and marketing into one dynamic bundle — creative, forward-thinking, and built for measurable growth.",
+      "We combine strategic advice, business operations, and marketing into one dynamic bundle: creative, forward-thinking, and built for measurable growth.",
     ctaPrimary: "Book a call",
     ctaSecondary: "View our work",
     stats: [
@@ -146,7 +146,7 @@ const en: Dictionary = {
     label: "Services",
     title: "Advice and execution",
     subtitle:
-      "No standalone decks. We think along, steer, and deliver — from strategy to daily operations and visibility.",
+      "No standalone decks. We think along, steer, and deliver, from strategy to daily operations and visibility.",
     items: [
       {
         title: "Strategic consulting",
@@ -163,7 +163,7 @@ const en: Dictionary = {
       {
         title: "Organic social marketing",
         description:
-          "Content that sticks — authentic, consistent, and built for algorithms and humans alike. No ad budget required, real momentum.",
+          "Content that sticks: authentic, consistent, and built for algorithms and humans alike. No ad budget required, real momentum.",
         tags: ["Content", "Social", "Community"],
       },
     ],
@@ -172,7 +172,7 @@ const en: Dictionary = {
     label: "Approach",
     title: "One bundle. Three disciplines.",
     subtitle:
-      "DotNexus power lies in the combination: strategy, operations, and marketing don't run in parallel — they amplify each other.",
+      "DotNexus power lies in the combination: strategy, operations, and marketing don't run in parallel, they amplify each other.",
     pillars: [
       {
         title: "Creative",
@@ -184,7 +184,7 @@ const en: Dictionary = {
       },
       {
         title: "Dynamic",
-        description: "Move fast, test, optimize — growth isn't a static plan.",
+        description: "Move fast, test, and optimize. Growth isn't a static plan.",
       },
     ],
     bundle: {
@@ -197,7 +197,7 @@ const en: Dictionary = {
     label: "Marketing",
     title: "Organic social as engine",
     subtitle:
-      "We believe in owned attention: content that builds trust, expands reach, and feeds conversion — without reliance on paid spend.",
+      "We believe in owned attention: content that builds trust, expands reach, and feeds conversion, without reliance on paid spend.",
     points: [
       "Content strategy aligned with your brand and audience",
       "Production and publishing with consistent cadence",
@@ -211,23 +211,23 @@ const en: Dictionary = {
     subtitle:
       "A selection of projects where strategy, operations, and marketing converge.",
     project: "Masking Master",
-    role: "Strategy · Branding · Organic social · Growth",
+    role: "Strategy, branding, B2C/B2B positioning and international growth",
     visit: "View project",
     metrics: [
-      { value: "B2B", label: "Positioning" },
+      { value: "B2C and B2B", label: "Positioning" },
       { value: "Social", label: "Content engine" },
-      { value: "NL", label: "Market focus" },
+      { value: "Global", label: "Market focus" },
     ],
   },
   cta: {
     title: "Ready for the next step?",
     subtitle:
-      "Tell us where you stand — we'll think along, no strings attached, about the smartest move forward.",
+      "Tell us where you stand. We'll think along, no strings attached, about the smartest move forward.",
     button: "Get in touch",
     email: "hello@dotnexus.nl",
   },
   footer: {
-    tagline: "Strategy · Operations · Organic marketing",
+    tagline: "Strategy, operations and organic marketing",
     rights: "All rights reserved.",
   },
 };

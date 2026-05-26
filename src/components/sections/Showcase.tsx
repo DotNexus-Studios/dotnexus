@@ -2,10 +2,12 @@
 
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
+import Image from "next/image";
 import { useLocale } from "@/context/LocaleProvider";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 
 const SHOWCASE_URL = "https://maskingmaster.com";
+const SHOWCASE_IMAGE = "/Producten_MM-InHand.webp";
 
 export function Showcase() {
   const { t } = useLocale();
@@ -45,17 +47,15 @@ export function Showcase() {
         >
           <div className="absolute inset-0 z-10 bg-gradient-to-t from-white via-white/50 to-transparent" />
           <div className="relative aspect-[21/9] w-full overflow-hidden bg-neutral-100">
-            <div className="absolute inset-0 grid-pattern opacity-40" />
-            <motion.div
-              className="absolute inset-0 flex items-center justify-center"
-              animate={{ opacity: [0.4, 0.7, 0.4] }}
-              transition={{ duration: 4, repeat: Infinity }}
-            >
-              <span className="font-mono text-[12vw] font-bold tracking-tighter text-black/[0.06] sm:text-[8vw]">
-                MASKING MASTER
-              </span>
-            </motion.div>
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(0,0,0,0.06),transparent_50%)]" />
+            <Image
+              src={SHOWCASE_IMAGE}
+              alt="Masking Master producten"
+              fill
+              className="object-cover object-center transition duration-500 group-hover:scale-[1.02]"
+              sizes="(max-width: 768px) 100vw, 1152px"
+              priority={false}
+            />
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(0,0,0,0.04),transparent_55%)]" />
           </div>
 
           <div className="relative z-20 flex flex-col gap-6 p-8 sm:flex-row sm:items-end sm:justify-between sm:p-12">
