@@ -60,16 +60,15 @@ export function Approach() {
               </h3>
               <p className="mt-4 text-muted">{t.approach.bundle.description}</p>
             </div>
-            <div className="flex gap-3 font-mono text-xs tracking-widest text-muted uppercase">
-              <span className="rounded-full border border-border px-4 py-2">
-                Strategy
-              </span>
-              <span className="rounded-full border border-border px-4 py-2">
-                Ops
-              </span>
-              <span className="rounded-full border border-border px-4 py-2">
-                Social
-              </span>
+            <div className="flex flex-wrap gap-3 font-mono text-xs tracking-widest text-muted uppercase">
+              {t.approach.bundleTags.map((tag) => (
+                <span
+                  key={tag}
+                  className="rounded-full border border-border px-4 py-2"
+                >
+                  {tag}
+                </span>
+              ))}
             </div>
           </div>
         </motion.div>

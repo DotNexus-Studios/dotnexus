@@ -53,7 +53,7 @@ export function Hero() {
 
           <motion.div variants={fadeUp} className="mt-10 flex flex-wrap gap-4">
             <a
-              href="#contact"
+              href={`mailto:${t.cta.email}`}
               className="group inline-flex items-center gap-2 rounded-full bg-foreground px-6 py-3.5 text-sm font-medium text-background transition hover:bg-foreground/90"
             >
               {t.hero.ctaPrimary}

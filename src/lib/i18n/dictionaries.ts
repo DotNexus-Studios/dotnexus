@@ -2,9 +2,9 @@ import type { Dictionary, Locale } from "./types";
 
 const nl: Dictionary = {
   meta: {
-    title: "DotNexus: Strategie, operatie & marketing",
+    title: "DotNexus: Growth bureau",
     description:
-      "DotNexus adviseert en voert uit: strategisch advies, bedrijfsvoering en organic social marketing in één bundel voor bedrijven die willen groeien.",
+      "Growth bureau voor startups en corporates die toe zijn aan de volgende stap. Strategie, bedrijfsvoering en online groei in één beweging.",
   },
   nav: {
     services: "Diensten",
@@ -15,112 +15,116 @@ const nl: Dictionary = {
   hero: {
     eyebrow: "Growth bureau",
     title: "De volgende stap",
-    titleAccent: "in één beweging.",
+    titleAccent: "begint met beweging.",
     subtitle:
-      "Wij combineren strategisch advies, bedrijfsvoering en marketing tot één dynamische bundel: creatief, vooruitstrevend en gericht op meetbare groei.",
-    ctaPrimary: "Plan een gesprek",
+      "Van startup met een groeiplan tot corporate die een frisse, out of the box impuls zoekt: wij leveren geen los product, maar zetten momentum neer. Met ondernemerservaring, zakelijke creativiteit en een integrale aanpak tillen we plannen naar het volgende level.",
+    ctaPrimary: "Stuur een e-mail",
     ctaSecondary: "Bekijk ons werk",
     stats: [
-      { value: "360°", label: "Integrale groeiaanpak" },
-      { value: "Organic", label: "Social-first marketing" },
-      { value: "1", label: "Partner, één lijn" },
+      { value: "360°", label: "Integrale aanpak" },
+      { value: "A-Z", label: "Van strategie tot executie" },
+      { value: "Elke fase", label: "Startup tot corporate" },
     ],
   },
   services: {
     label: "Diensten",
-    title: "Advies én uitvoering",
+    title: "Meer dan een marketingbureau",
     subtitle:
-      "Geen losse slides. Wij denken mee, sturen bij en zetten door, van strategie tot dagelijkse operatie en zichtbaarheid.",
+      "Door ervaring in ondernemerschap en het grootbrengen van projecten kennen wij vrijwel alle processen die groei mogelijk maken. Wij denken mee, sturen bij en zetten door.",
     items: [
       {
         title: "Strategisch advies",
         description:
-          "Scherpe analyse, heldere prioriteiten en een routekaart die past bij jouw fase. Wij helpen keuzes maken die morgen nog kloppen.",
-        tags: ["Positionering", "Groei", "Roadmap"],
+          "Groeiplannen, heldere prioriteiten en een routekaart die past bij jouw fase. Of je nu net start of opschaalt: wij helpen keuzes maken die de volgende stap mogelijk maken.",
+        tags: ["Groeiplan", "Positionering", "Roadmap"],
       },
       {
         title: "Bedrijfsvoering",
         description:
-          "Processen strakker, teams scherper, executie sneller. Wij brengen structuur zonder de creativiteit te doden.",
-        tags: ["Operations", "Teams", "Schaal"],
+          "Waar processen vastlopen of teams energie verliezen, brengen wij structuur en tempo terug. Scherper executeren, zonder de creativiteit te doden.",
+        tags: ["Operations", "Teams", "Executie"],
       },
       {
-        title: "Organic social marketing",
+        title: "Online groei & social",
         description:
-          "Content die blijft hangen: authentiek, consistent en gebouwd voor algoritmes én mensen. Geen advertentiebudget, wel momentum.",
-        tags: ["Content", "Social", "Community"],
+          "Groeiplafonds doorbreken via online kanalen en organic social. Content en zichtbaarheid die vertrouwen opbouwen en momentum geven, zonder alleen op advertenties te leunen.",
+        tags: ["Organic", "Content", "Bereik"],
       },
     ],
   },
   approach: {
     label: "Aanpak",
-    title: "Eén bundel. Drie disciplines.",
+    title: "Zakelijk creatief. Altijd in beweging.",
     subtitle:
-      "De kracht van DotNexus zit in de combinatie: strategie, operatie en marketing lopen bij ons niet parallel, ze versterken elkaar.",
+      "Onze kracht zit in de combinatie: strategie, operatie en online groei versterken elkaar. Daardoor lossen we niet één symptoom op, maar zetten we een beweging in gang.",
     pillars: [
       {
-        title: "Creatief",
-        description: "Verhalen en visuals die opvallen zonder schreeuwerig te zijn.",
+        title: "Ondernemend",
+        description:
+          "Wij kennen het traject van idee tot uitvoering, omdat we het zelf hebben doorlopen. Die ervaring nemen we mee in elk plan.",
       },
       {
-        title: "Vooruitstrevend",
-        description: "Trends vertalen we naar wat nú werkt voor jouw merk.",
+        title: "Creatief",
+        description:
+          "Out of the box denken met een zakelijke basis. Geen standaard playbook, wel oplossingen die opvallen en werken.",
       },
       {
         title: "Dynamisch",
-        description: "Snel schakelen, testen en optimaliseren. Groei is geen statisch plan.",
+        description:
+          "Energie, snelheid en bijsturen. Groei is geen statisch document, maar een ritme dat we samen vasthouden.",
       },
     ],
     bundle: {
-      title: "Alles in één lijn",
+      title: "Alles onder één dak, slim ingeregeld",
       description:
-        "Geen silo's tussen consultants en marketeers. Eén team, één ritme, één doel: jouw bedrijf naar de volgende fase brengen.",
+        "Wij doen in principe alles wat nodig is, maar laten los wat anderen beter kunnen en halen expertise aan waar het hoort. Eén aanspreekpunt, één lijn, één beweging vooruit.",
     },
+    bundleTags: ["Strategie", "Operatie", "Online groei"],
   },
   marketing: {
-    label: "Marketing",
-    title: "Organic social als motor",
+    label: "Wat we oplossen",
+    title: "Drie uitdagingen, één beweging",
     subtitle:
-      "Wij geloven in owned attention: content die vertrouwen opbouwt, bereik vergroot en conversie voedt, zonder afhankelijkheid van paid spend.",
+      "Geen los marketingbureau. Wij pakken groei integraal aan: bedrijfsvoering, online kanalen en teamenergie horen bij elkaar.",
     points: [
-      "Contentstrategie afgestemd op jouw merk en doelgroep",
-      "Productie en publicatie met consistente cadans",
-      "Community building en engagement die echt voelt",
-      "Data-gedreven bijsturing op basis van performance",
+      "Bedrijfsvoering die weer flow en richting krijgt",
+      "Groeiplafonds doorbreken via online kanalen en organic social",
+      "Teams opnieuw enthousiasmeren voor de volgende stap",
+      "Strategie en executie in hetzelfde ritme, zonder silo's",
     ],
   },
   showcase: {
     label: "Showcase",
-    title: "Bewijs in de praktijk",
+    title: "Van idee tot merk in de markt",
     subtitle:
-      "Een selectie van projecten waar strategie, operatie en marketing samenkomen.",
+      "Projecten waar wij van A tot Z betrokken zijn geweest en een uniek product of merk hebben helpen neerzetten.",
     project: "Masking Master",
-    role: "Strategie, branding, B2C/B2B positionering en internationale groei",
+    role: "Van concept tot lancering: strategie, branding, B2C/B2B positionering en internationale groei",
     visit: "Bekijk project",
     metrics: [
+      { value: "A tot Z", label: "Betrokkenheid" },
       { value: "B2C en B2B", label: "Positionering" },
-      { value: "Social", label: "Content engine" },
       { value: "Global", label: "Markt focus" },
     ],
   },
   cta: {
-    title: "Klaar voor de volgende stap?",
+    title: "Klaar voor beweging?",
     subtitle:
-      "Vertel ons waar je staat. Wij denken vrijblijvend mee over wat de slimste beweging is.",
-    button: "Neem contact op",
+      "Mail ons waar je staat en wat je zoekt. Wij denken vrijblijvend mee over de slimste volgende stap.",
+    button: "Stuur een e-mail",
     email: "hello@dotnexus.nl",
   },
   footer: {
-    tagline: "Strategie, operatie en organic marketing",
+    tagline: "Growth bureau: strategie, operatie en online groei",
     rights: "Alle rechten voorbehouden.",
   },
 };
 
 const en: Dictionary = {
   meta: {
-    title: "DotNexus: Strategy, operations & marketing",
+    title: "DotNexus: Growth agency",
     description:
-      "DotNexus advises and executes: strategic consulting, business operations, and organic social marketing in one bundle for companies ready to grow.",
+      "Growth agency for startups and corporates ready for the next step. Strategy, operations, and online growth in one motion.",
   },
   nav: {
     services: "Services",
@@ -131,103 +135,107 @@ const en: Dictionary = {
   hero: {
     eyebrow: "Growth agency",
     title: "The next step",
-    titleAccent: "in one motion.",
+    titleAccent: "starts with motion.",
     subtitle:
-      "We combine strategic advice, business operations, and marketing into one dynamic bundle: creative, forward-thinking, and built for measurable growth.",
-    ctaPrimary: "Book a call",
+      "From startups building a growth plan to corporates needing a fresh, out of the box push: we don't deliver a standalone product, we create momentum. With entrepreneurial experience, business creativity, and an integrated approach, we take plans to the next level.",
+    ctaPrimary: "Send an email",
     ctaSecondary: "View our work",
     stats: [
-      { value: "360°", label: "Integrated growth" },
-      { value: "Organic", label: "Social-first marketing" },
-      { value: "1", label: "Partner, one line" },
+      { value: "360°", label: "Integrated approach" },
+      { value: "A-Z", label: "Strategy through execution" },
+      { value: "All stages", label: "Startup to corporate" },
     ],
   },
   services: {
     label: "Services",
-    title: "Advice and execution",
+    title: "More than a marketing agency",
     subtitle:
-      "No standalone decks. We think along, steer, and deliver, from strategy to daily operations and visibility.",
+      "Through entrepreneurship and bringing projects to life, we know the processes that enable growth. We think along, steer, and deliver.",
     items: [
       {
         title: "Strategic consulting",
         description:
-          "Sharp analysis, clear priorities, and a roadmap that fits your stage. We help you make decisions that still make sense tomorrow.",
-        tags: ["Positioning", "Growth", "Roadmap"],
+          "Growth plans, clear priorities, and a roadmap that fits your stage. Whether you're launching or scaling, we help you make the next step possible.",
+        tags: ["Growth plan", "Positioning", "Roadmap"],
       },
       {
         title: "Business operations",
         description:
-          "Tighter processes, sharper teams, faster execution. We bring structure without killing creativity.",
-        tags: ["Operations", "Teams", "Scale"],
+          "Where processes stall or teams lose energy, we bring structure and pace back. Sharper execution without killing creativity.",
+        tags: ["Operations", "Teams", "Execution"],
       },
       {
-        title: "Organic social marketing",
+        title: "Online growth & social",
         description:
-          "Content that sticks: authentic, consistent, and built for algorithms and humans alike. No ad budget required, real momentum.",
-        tags: ["Content", "Social", "Community"],
+          "Break growth ceilings through online channels and organic social. Content and visibility that build trust and momentum, without relying on ads alone.",
+        tags: ["Organic", "Content", "Reach"],
       },
     ],
   },
   approach: {
     label: "Approach",
-    title: "One bundle. Three disciplines.",
+    title: "Business creative. Always in motion.",
     subtitle:
-      "DotNexus power lies in the combination: strategy, operations, and marketing don't run in parallel, they amplify each other.",
+      "Our strength is the combination: strategy, operations, and online growth amplify each other. That sets a movement in motion, instead of fixing one symptom.",
     pillars: [
       {
-        title: "Creative",
-        description: "Stories and visuals that stand out without shouting.",
+        title: "Entrepreneurial",
+        description:
+          "We know the journey from idea to execution because we've lived it. That experience shapes every plan we build.",
       },
       {
-        title: "Forward-thinking",
-        description: "We translate trends into what works for your brand now.",
+        title: "Creative",
+        description:
+          "Out of the box thinking with a business backbone. No standard playbook, solutions that stand out and work.",
       },
       {
         title: "Dynamic",
-        description: "Move fast, test, and optimize. Growth isn't a static plan.",
+        description:
+          "Energy, speed, and iteration. Growth isn't a static document, it's a rhythm we keep together.",
       },
     ],
     bundle: {
-      title: "Everything aligned",
+      title: "Everything under one roof, smartly arranged",
       description:
-        "No silos between consultants and marketers. One team, one rhythm, one goal: take your company to the next stage.",
+        "We do what's needed, release what others do better, and bring in expertise where it belongs. One point of contact, one line, one move forward.",
     },
+    bundleTags: ["Strategy", "Operations", "Online growth"],
   },
   marketing: {
-    label: "Marketing",
-    title: "Organic social as engine",
+    label: "What we solve",
+    title: "Three challenges, one motion",
     subtitle:
-      "We believe in owned attention: content that builds trust, expands reach, and feeds conversion, without reliance on paid spend.",
+      "Not a standalone marketing agency. We tackle growth integrally: operations, online channels, and team energy belong together.",
     points: [
-      "Content strategy aligned with your brand and audience",
-      "Production and publishing with consistent cadence",
-      "Community building and engagement that feels real",
-      "Data-driven iteration based on performance",
+      "Operations that regain flow and direction",
+      "Breaking growth ceilings through online channels and organic social",
+      "Re-energizing teams for the next step",
+      "Strategy and execution in the same rhythm, without silos",
     ],
   },
   showcase: {
     label: "Showcase",
-    title: "Proof in practice",
+    title: "From idea to market-ready brand",
     subtitle:
-      "A selection of projects where strategy, operations, and marketing converge.",
+      "Projects where we were involved A to Z and helped launch a unique product or brand.",
     project: "Masking Master",
-    role: "Strategy, branding, B2C/B2B positioning and international growth",
+    role: "From concept to launch: strategy, branding, B2C/B2B positioning, and international growth",
     visit: "View project",
     metrics: [
+      { value: "A to Z", label: "Involvement" },
       { value: "B2C and B2B", label: "Positioning" },
-      { value: "Social", label: "Content engine" },
       { value: "Global", label: "Market focus" },
     ],
   },
   cta: {
-    title: "Ready for the next step?",
+    title: "Ready for motion?",
     subtitle:
-      "Tell us where you stand. We'll think along, no strings attached, about the smartest move forward.",
-    button: "Get in touch",
+      "Email us where you are and what you're looking for. We'll think along, no strings attached, about the smartest next step.",
+    button: "Send an email",
     email: "hello@dotnexus.nl",
   },
   footer: {
-    tagline: "Strategy, operations and organic marketing",
+    tagline: "Growth agency: strategy, operations, and online growth",
     rights: "All rights reserved.",
   },
 };

@@ -42,6 +42,7 @@ export type Dictionary = {
       title: string;
       description: string;
     };
+    bundleTags: string[];
   };
   marketing: {
     label: string;

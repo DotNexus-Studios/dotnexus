@@ -57,10 +57,10 @@ export function Header() {
         <div className="flex items-center gap-3">
           <LanguageToggle />
           <a
-            href="#contact"
+            href={`mailto:${t.cta.email}`}
             className="hidden rounded-full border border-border-strong bg-foreground px-4 py-2 text-sm font-medium text-background transition hover:bg-foreground/90 sm:inline-block"
           >
-            {t.nav.contact}
+            {t.cta.button}
           </a>
           <button
             type="button"
