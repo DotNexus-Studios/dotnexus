@@ -4,7 +4,7 @@ const nl: Dictionary = {
   meta: {
     title: "DotNexus: Growth bureau",
     description:
-      "Growth bureau voor startups en corporates die toe zijn aan de volgende stap. Strategie, bedrijfsvoering en online groei in één beweging.",
+      "Growth bureau voor startups en corporates: strategie, branding, content, webdevelopment, AI, workflow automation en data-gedreven groei.",
   },
   nav: {
     services: "Diensten",
@@ -17,7 +17,7 @@ const nl: Dictionary = {
     title: "De volgende stap",
     titleAccent: "begint met beweging.",
     subtitle:
-      "Van startup met een groeiplan tot corporate die een frisse, out of the box impuls zoekt: wij leveren geen los product, maar zetten momentum neer. Met ondernemerservaring, zakelijke creativiteit en een integrale aanpak tillen we plannen naar het volgende level.",
+      "Van startup met een groeiplan tot corporate die een frisse, out of the box impuls zoekt: wij leveren geen los product, maar zetten momentum neer. Strategie, bedrijfsvoering, web, AI en inzichten zetten we functioneel in voor de volgende stap.",
     ctaPrimary: "Stuur een e-mail",
     ctaSecondary: "Bekijk ons werk",
     stats: [
@@ -30,7 +30,7 @@ const nl: Dictionary = {
     label: "Diensten",
     title: "Meer dan een marketingbureau",
     subtitle:
-      "Door ervaring in ondernemerschap en het grootbrengen van projecten kennen wij vrijwel alle processen die groei mogelijk maken. Wij denken mee, sturen bij en zetten door.",
+      "Van strategie en branding tot content, web, AI, workflow automation en data: wij denken mee, bouwen mee en zetten door.",
     items: [
       {
         title: "Strategisch advies",
@@ -47,8 +47,50 @@ const nl: Dictionary = {
       {
         title: "Online groei & social",
         description:
-          "Groeiplafonds doorbreken via online kanalen en organic social. Content en zichtbaarheid die vertrouwen opbouwen en momentum geven, zonder alleen op advertenties te leunen.",
-        tags: ["Organic", "Content", "Bereik"],
+          "Groeiplafonds doorbreken via online kanalen en organic social. Zichtbaarheid en bereik die vertrouwen opbouwen, zonder alleen op advertenties te leunen.",
+        tags: ["Organic", "Social", "Bereik"],
+      },
+      {
+        title: "Webdevelopment",
+        description:
+          "Websites en webapplicaties die groei ondersteunen: snel, helder en gebouwd om mee te bewegen met jouw bedrijf. Van landing tot platform.",
+        tags: ["Websites", "Webapps", "UX"],
+      },
+      {
+        title: "AI integratie",
+        description:
+          "AI functioneel inzetten in je bedrijf: van klantcontact tot interne tools. Slimmer werken zonder de menselijke touch te verliezen.",
+        tags: ["AI tools", "Integratie", "Innovatie"],
+      },
+      {
+        title: "Data & inzichten",
+        description:
+          "Statistieken verbeteren, inzichten scherp krijgen en die data inzetten in bedrijfsvoering en strategie. Minder gissen, meer sturen.",
+        tags: ["Analytics", "Dashboards", "Besluitvorming"],
+      },
+      {
+        title: "Workflow automation",
+        description:
+          "Repetitieve processen automatiseren en workflows strakker koppelen. Minder handwerk, meer tijd voor wat echt verschil maakt.",
+        tags: ["Automatisering", "Processen", "Efficiëntie"],
+      },
+      {
+        title: "Branding & design",
+        description:
+          "Merkidentiteit, visuele stijl en design die je positionering versterken. Consistent, herkenbaar en klaar voor elk kanaal.",
+        tags: ["Branding", "Visual design", "Identiteit"],
+      },
+      {
+        title: "Contentstrategie",
+        description:
+          "Welke verhalen, welke kanalen, welk ritme. Een plan dat past bij je merk, doelgroep en groeifase.",
+        tags: ["Strategie", "Kanalen", "Planning"],
+      },
+      {
+        title: "Content creatie",
+        description:
+          "Van concept tot deliverable: copy, visuals en formats die werken op social en daarbuiten. Authentiek en afgestemd op je merk.",
+        tags: ["Copy", "Visuals", "Productie"],
       },
     ],
   },
@@ -56,7 +98,7 @@ const nl: Dictionary = {
     label: "Aanpak",
     title: "Zakelijk creatief. Altijd in beweging.",
     subtitle:
-      "Onze kracht zit in de combinatie: strategie, operatie en online groei versterken elkaar. Daardoor lossen we niet één symptoom op, maar zetten we een beweging in gang.",
+      "Onze kracht zit in de combinatie: strategie, branding, content, operatie, web, AI en data versterken elkaar. Daardoor zetten we een beweging in gang die je hele bedrijf voelt.",
     pillars: [
       {
         title: "Ondernemend",
@@ -79,18 +121,29 @@ const nl: Dictionary = {
       description:
         "Wij doen in principe alles wat nodig is, maar laten los wat anderen beter kunnen en halen expertise aan waar het hoort. Eén aanspreekpunt, één lijn, één beweging vooruit.",
     },
-    bundleTags: ["Strategie", "Operatie", "Online groei"],
+    bundleTags: [
+      "Strategie",
+      "Branding",
+      "Content",
+      "Web",
+      "AI",
+      "Automatisering",
+      "Data",
+    ],
   },
   marketing: {
     label: "Wat we oplossen",
-    title: "Drie uitdagingen, één beweging",
+    title: "Groei op alle fronten",
     subtitle:
-      "Geen los marketingbureau. Wij pakken groei integraal aan: bedrijfsvoering, online kanalen en teamenergie horen bij elkaar.",
+      "Geen los marketingbureau. Wij pakken groei integraal aan: van merk en content tot web, AI, automatisering en inzichten die je strategie sturen.",
     points: [
       "Bedrijfsvoering die weer flow en richting krijgt",
+      "Branding en design die je merk herkenbaar en consistent maken",
+      "Contentstrategie en creatie die aansluiten op je doelgroep en kanalen",
       "Groeiplafonds doorbreken via online kanalen en organic social",
+      "Websites, webapps en workflow automation die schaal geven",
+      "AI integratie en data die strategie en operatie slimmer maken",
       "Teams opnieuw enthousiasmeren voor de volgende stap",
-      "Strategie en executie in hetzelfde ritme, zonder silo's",
     ],
   },
   showcase: {
@@ -102,8 +155,8 @@ const nl: Dictionary = {
     role: "Van concept tot lancering: strategie, branding, B2C/B2B positionering en internationale groei",
     visit: "Bekijk project",
     metrics: [
-      { value: "A tot Z", label: "Betrokkenheid" },
-      { value: "B2C en B2B", label: "Positionering" },
+      { value: "A-Z", label: "Betrokkenheid" },
+      { value: "B2C/B2B", label: "Positionering" },
       { value: "Global", label: "Markt focus" },
     ],
   },
@@ -115,7 +168,7 @@ const nl: Dictionary = {
     email: "hello@dotnexus.nl",
   },
   footer: {
-    tagline: "Growth bureau: strategie, operatie en online groei",
+    tagline: "Growth bureau: strategie, branding, content, web en AI",
     rights: "Alle rechten voorbehouden.",
   },
 };
@@ -124,7 +177,7 @@ const en: Dictionary = {
   meta: {
     title: "DotNexus: Growth agency",
     description:
-      "Growth agency for startups and corporates ready for the next step. Strategy, operations, and online growth in one motion.",
+      "Growth agency for startups and corporates: strategy, branding, content, web development, AI, workflow automation, and data-driven growth.",
   },
   nav: {
     services: "Services",
@@ -137,7 +190,7 @@ const en: Dictionary = {
     title: "The next step",
     titleAccent: "starts with motion.",
     subtitle:
-      "From startups building a growth plan to corporates needing a fresh, out of the box push: we don't deliver a standalone product, we create momentum. With entrepreneurial experience, business creativity, and an integrated approach, we take plans to the next level.",
+      "From startups building a growth plan to corporates needing a fresh, out of the box push: we don't deliver a standalone product, we create momentum. Strategy, operations, web, AI, and insights work together for your next step.",
     ctaPrimary: "Send an email",
     ctaSecondary: "View our work",
     stats: [
@@ -150,7 +203,7 @@ const en: Dictionary = {
     label: "Services",
     title: "More than a marketing agency",
     subtitle:
-      "Through entrepreneurship and bringing projects to life, we know the processes that enable growth. We think along, steer, and deliver.",
+      "From strategy and branding to content, web, AI, workflow automation, and data: we think along, build along, and deliver.",
     items: [
       {
         title: "Strategic consulting",
@@ -167,8 +220,50 @@ const en: Dictionary = {
       {
         title: "Online growth & social",
         description:
-          "Break growth ceilings through online channels and organic social. Content and visibility that build trust and momentum, without relying on ads alone.",
-        tags: ["Organic", "Content", "Reach"],
+          "Break growth ceilings through online channels and organic social. Visibility and reach that build trust, without relying on ads alone.",
+        tags: ["Organic", "Social", "Reach"],
+      },
+      {
+        title: "Web development",
+        description:
+          "Websites and web applications built for growth: fast, clear, and designed to move with your business. From landing pages to platforms.",
+        tags: ["Websites", "Web apps", "UX"],
+      },
+      {
+        title: "AI integration",
+        description:
+          "Deploy AI functionally across your business: from customer touchpoints to internal tools. Work smarter without losing the human touch.",
+        tags: ["AI tools", "Integration", "Innovation"],
+      },
+      {
+        title: "Data & insights",
+        description:
+          "Improve your statistics, sharpen insights, and put data to work in operations and strategy. Less guessing, more steering.",
+        tags: ["Analytics", "Dashboards", "Decisions"],
+      },
+      {
+        title: "Workflow automation",
+        description:
+          "Automate repetitive processes and connect workflows more tightly. Less manual work, more time for what truly moves the needle.",
+        tags: ["Automation", "Processes", "Efficiency"],
+      },
+      {
+        title: "Branding & design",
+        description:
+          "Brand identity, visual style, and design that strengthen your positioning. Consistent, recognizable, and ready for every channel.",
+        tags: ["Branding", "Visual design", "Identity"],
+      },
+      {
+        title: "Content strategy",
+        description:
+          "Which stories, which channels, which cadence. A plan that fits your brand, audience, and growth stage.",
+        tags: ["Strategy", "Channels", "Planning"],
+      },
+      {
+        title: "Content creation",
+        description:
+          "From concept to deliverable: copy, visuals, and formats that work on social and beyond. Authentic and aligned with your brand.",
+        tags: ["Copy", "Visuals", "Production"],
       },
     ],
   },
@@ -176,7 +271,7 @@ const en: Dictionary = {
     label: "Approach",
     title: "Business creative. Always in motion.",
     subtitle:
-      "Our strength is the combination: strategy, operations, and online growth amplify each other. That sets a movement in motion, instead of fixing one symptom.",
+      "Our strength is the combination: strategy, branding, content, operations, web, AI, and data amplify each other. That sets a movement your whole company can feel.",
     pillars: [
       {
         title: "Entrepreneurial",
@@ -199,18 +294,29 @@ const en: Dictionary = {
       description:
         "We do what's needed, release what others do better, and bring in expertise where it belongs. One point of contact, one line, one move forward.",
     },
-    bundleTags: ["Strategy", "Operations", "Online growth"],
+    bundleTags: [
+      "Strategy",
+      "Branding",
+      "Content",
+      "Web",
+      "AI",
+      "Automation",
+      "Data",
+    ],
   },
   marketing: {
     label: "What we solve",
-    title: "Three challenges, one motion",
+    title: "Growth on every front",
     subtitle:
-      "Not a standalone marketing agency. We tackle growth integrally: operations, online channels, and team energy belong together.",
+      "Not a standalone marketing agency. We tackle growth integrally: from brand and content to web, AI, automation, and insights that drive strategy.",
     points: [
       "Operations that regain flow and direction",
+      "Branding and design that make your brand recognizable and consistent",
+      "Content strategy and creation aligned with your audience and channels",
       "Breaking growth ceilings through online channels and organic social",
+      "Websites, web apps, and workflow automation that create scale",
+      "AI integration and data that make strategy and operations smarter",
       "Re-energizing teams for the next step",
-      "Strategy and execution in the same rhythm, without silos",
     ],
   },
   showcase: {
@@ -222,8 +328,8 @@ const en: Dictionary = {
     role: "From concept to launch: strategy, branding, B2C/B2B positioning, and international growth",
     visit: "View project",
     metrics: [
-      { value: "A to Z", label: "Involvement" },
-      { value: "B2C and B2B", label: "Positioning" },
+      { value: "A-Z", label: "Involvement" },
+      { value: "B2C/B2B", label: "Positioning" },
       { value: "Global", label: "Market focus" },
     ],
   },
@@ -235,7 +341,7 @@ const en: Dictionary = {
     email: "hello@dotnexus.nl",
   },
   footer: {
-    tagline: "Growth agency: strategy, operations, and online growth",
+    tagline: "Growth agency: strategy, branding, content, web, and AI",
     rights: "All rights reserved.",
   },
 };

@@ -16,11 +16,11 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://dotnexus.nl"),
   title: "DotNexus: Growth bureau",
   description:
-    "Growth bureau voor startups en corporates die toe zijn aan de volgende stap. Strategie, bedrijfsvoering en online groei in één beweging.",
+    "Growth bureau voor startups en corporates: strategie, branding, content, webdevelopment, AI, workflow automation en data-gedreven groei.",
   openGraph: {
     title: "DotNexus: Growth bureau",
     description:
-      "Van startup tot corporate: strategie, bedrijfsvoering en online groei in één beweging.",
+      "Van startup tot corporate: strategie, branding, content, web, AI en automatisering in één beweging.",
     url: "https://dotnexus.nl",
     siteName: "DotNexus",
     locale: "nl_NL",

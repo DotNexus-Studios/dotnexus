@@ -1,11 +1,33 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Layers, LineChart, Share2 } from "lucide-react";
+import {
+  BarChart3,
+  Code2,
+  Layers,
+  LineChart,
+  Palette,
+  PenLine,
+  Share2,
+  Sparkles,
+  Target,
+  Workflow,
+} from "lucide-react";
 import { useLocale } from "@/context/LocaleProvider";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 
-const icons = [LineChart, Layers, Share2];
+const icons = [
+  LineChart,
+  Layers,
+  Share2,
+  Code2,
+  Sparkles,
+  BarChart3,
+  Workflow,
+  Palette,
+  Target,
+  PenLine,
+];
 
 export function Services() {
   const { t } = useLocale();
@@ -32,7 +54,7 @@ export function Services() {
           {t.services.subtitle}
         </motion.p>
 
-        <div className="mt-16 grid gap-6 lg:grid-cols-3">
+        <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {t.services.items.map((item, i) => {
             const Icon = icons[i] ?? LineChart;
             return (
