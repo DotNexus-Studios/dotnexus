@@ -13,8 +13,18 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "DotNexus",
-  description: "DotNexus — jouw .NET hub op het web.",
+  title: "DotNexus — Strategie, operatie & marketing",
+  description:
+    "DotNexus adviseert en voert uit: strategisch advies, bedrijfsvoering en organic social marketing in één bundel voor bedrijven die willen groeien.",
+  openGraph: {
+    title: "DotNexus",
+    description:
+      "Strategie, bedrijfsvoering en organic social marketing — één bundel voor groei.",
+    url: "https://dotnexus.nl",
+    siteName: "DotNexus",
+    locale: "nl_NL",
+    type: "website",
+  },
 };
 
 export default function RootLayout({
@@ -23,8 +33,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="nl">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+    <html lang="nl" suppressHydrationWarning>
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} min-h-screen antialiased`}
+      >
         {children}
       </body>
     </html>
