@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { ArrowDownRight, ArrowRight } from "lucide-react";
+import { HeroParticleField } from "@/components/effects/HeroParticleField";
 import { useLocale } from "@/context/LocaleProvider";
 import { AnimatedCounter } from "@/components/ui/AnimatedCounter";
 
@@ -84,6 +85,15 @@ export function Hero() {
               <p className="mt-2 text-sm text-muted">{stat.label}</p>
             </div>
           ))}
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1, duration: 1 }}
+          className="mt-10"
+        >
+          <HeroParticleField className="h-56 sm:h-72 md:h-80" />
         </motion.div>
       </div>
 
