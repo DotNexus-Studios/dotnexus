@@ -13,6 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://dotnexus.nl"),
   title: "DotNexus — Strategie, operatie & marketing",
   description:
     "DotNexus adviseert en voert uit: strategisch advies, bedrijfsvoering en organic social marketing in één bundel voor bedrijven die willen groeien.",
@@ -24,6 +25,11 @@ export const metadata: Metadata = {
     siteName: "DotNexus",
     locale: "nl_NL",
     type: "website",
+    images: [{ url: "/logo.png", width: 1000, height: 1000, alt: "DotNexus" }],
+  },
+  icons: {
+    icon: "/logo.png",
+    apple: "/logo.png",
   },
 };
 

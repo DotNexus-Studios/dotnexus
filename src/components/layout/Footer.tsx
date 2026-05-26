@@ -1,7 +1,7 @@
 "use client";
 
-import Link from "next/link";
 import { useLocale } from "@/context/LocaleProvider";
+import { Logo } from "@/components/ui/Logo";
 
 export function Footer() {
   const { t } = useLocale();
@@ -11,9 +11,7 @@ export function Footer() {
     <footer className="border-t border-border">
       <div className="mx-auto flex max-w-6xl flex-col gap-6 px-6 py-12 sm:flex-row sm:items-center sm:justify-between">
         <div>
-          <Link href="/" className="font-mono text-sm tracking-widest">
-            DOTNEXUS
-          </Link>
+          <Logo size="sm" showWordmark={false} />
           <p className="mt-2 text-sm text-muted">{t.footer.tagline}</p>
         </div>
         <p className="font-mono text-xs text-muted">

@@ -2,10 +2,10 @@
 
 import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
-import Link from "next/link";
 import { useEffect, useState } from "react";
 import { useLocale } from "@/context/LocaleProvider";
 import { LanguageToggle } from "@/components/ui/LanguageToggle";
+import { Logo } from "@/components/ui/Logo";
 
 export function Header() {
   const { t } = useLocale();
@@ -40,15 +40,7 @@ export function Header() {
       }`}
     >
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6">
-        <Link href="/" className="group flex items-center gap-2">
-          <span className="relative flex h-8 w-8 items-center justify-center rounded-sm border border-border-strong bg-surface font-mono text-xs font-medium">
-            DN
-            <span className="absolute -right-0.5 -bottom-0.5 h-1.5 w-1.5 rounded-full bg-white" />
-          </span>
-          <span className="text-sm font-medium tracking-tight group-hover:text-white/80">
-            DotNexus
-          </span>
-        </Link>
+        <Logo size="md" />
 
         <nav className="hidden items-center gap-8 md:flex">
           {links.map((link) => (
