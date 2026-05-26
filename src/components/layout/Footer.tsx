@@ -17,7 +17,7 @@ export function Footer() {
         </div>
         <p className="flex flex-wrap items-center justify-center gap-1.5 font-mono text-xs text-muted sm:justify-end">
           <span>© {year}</span>
-          <BrandWordmark dotClassName="h-1 w-1" textClassName="font-mono text-xs" />
+          <BrandWordmark className="font-mono text-xs" />
           <span>{t.footer.rights}</span>
         </p>
       </div>

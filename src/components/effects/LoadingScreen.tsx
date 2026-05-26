@@ -3,7 +3,7 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 
-const BRAND_TEXT = "NEXUS";
+const BRAND_TEXT = "DOTNEXUS";
 
 /** Max 6s total: 5.5s animation + 0.5s fade */
 const FILL_DURATION = 1900;
@@ -49,21 +49,9 @@ function drawBrandMark(
   ctx.save();
   ctx.fillStyle = `rgba(0,0,0,${alpha})`;
   ctx.font = `600 ${fontSize}px system-ui, -apple-system, sans-serif`;
+  ctx.textAlign = "center";
   ctx.textBaseline = "middle";
-
-  const textWidth = ctx.measureText(BRAND_TEXT).width;
-  const dotRadius = fontSize * 0.13;
-  const gap = fontSize * 0.38;
-  const totalWidth = dotRadius * 2 + gap + textWidth;
-  const centerY = height / 2;
-  const startX = width / 2 - totalWidth / 2;
-
-  ctx.beginPath();
-  ctx.arc(startX + dotRadius, centerY, dotRadius, 0, Math.PI * 2);
-  ctx.fill();
-
-  ctx.textAlign = "left";
-  ctx.fillText(BRAND_TEXT, startX + dotRadius * 2 + gap, centerY);
+  ctx.fillText(BRAND_TEXT, width / 2, height / 2);
   ctx.restore();
 }
 
@@ -72,7 +60,7 @@ function measureBrandFontSize(
   width: number
 ): number {
   const maxTextWidth = width * 0.9;
-  let fontSize = Math.floor(width / (BRAND_TEXT.length * 0.72));
+  let fontSize = Math.floor(width / (BRAND_TEXT.length * 0.62));
   fontSize = Math.max(22, Math.min(fontSize, 80));
 
   const setFont = (size: number) => {
@@ -80,10 +68,7 @@ function measureBrandFontSize(
   };
 
   setFont(fontSize);
-  while (
-    ctx.measureText(BRAND_TEXT).width + fontSize * 0.55 > maxTextWidth &&
-    fontSize > 18
-  ) {
+  while (ctx.measureText(BRAND_TEXT).width > maxTextWidth && fontSize > 18) {
     fontSize -= 1;
     setFont(fontSize);
   }
