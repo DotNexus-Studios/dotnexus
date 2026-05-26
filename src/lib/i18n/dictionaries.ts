@@ -27,7 +27,7 @@ const nl: Dictionary = {
     ],
     dotsLabel: "Connecting the dots",
     dotsHint:
-      "Scroll om vooruitgang te zien. De punten volgen je paginapositie en verbinden alleen tijdens beweging.",
+      "Vooruitgang ontstaat alleen in beweging. Ergens beginnen, meegaan met de stroom, en blijven optimaliseren tot alles met elkaar verbonden valt.",
   },
   services: {
     label: "Diensten",
@@ -203,7 +203,7 @@ const en: Dictionary = {
     ],
     dotsLabel: "Connecting the dots",
     dotsHint:
-      "Scroll to see progress. Dots follow your page position and connect only while you move.",
+      "Progress only emerges in motion. Start somewhere, move with the flow, and keep refining until everything connects.",
   },
   services: {
     label: "Services",
