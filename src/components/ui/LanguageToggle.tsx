@@ -28,12 +28,12 @@ export function LanguageToggle() {
             {active && (
               <motion.span
                 layoutId="lang-pill"
-                className="absolute inset-0 rounded-full bg-white"
+                className="absolute inset-0 rounded-full bg-foreground"
                 transition={{ type: "spring", stiffness: 400, damping: 30 }}
               />
             )}
             <span
-              className={`relative z-10 ${active ? "text-black" : "text-muted hover:text-foreground"}`}
+              className={`relative z-10 ${active ? "text-background" : "text-muted hover:text-foreground"}`}
             >
               {label}
             </span>

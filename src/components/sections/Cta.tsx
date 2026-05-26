@@ -17,7 +17,7 @@ export function Cta() {
       >
         <div className="pointer-events-none absolute inset-0">
           <div className="absolute inset-0 grid-pattern opacity-30" />
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(255,255,255,0.1),transparent_60%)]" />
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(0,0,0,0.05),transparent_60%)]" />
         </div>
         <div className="relative">
           <h2 className="text-3xl font-semibold tracking-tight sm:text-5xl">
@@ -26,7 +26,7 @@ export function Cta() {
           <p className="mx-auto mt-4 max-w-xl text-muted">{t.cta.subtitle}</p>
           <a
             href={`mailto:${t.cta.email}`}
-            className="mt-10 inline-flex items-center gap-3 rounded-full bg-white px-8 py-4 text-sm font-medium text-black transition hover:bg-white/90"
+            className="mt-10 inline-flex items-center gap-3 rounded-full bg-foreground px-8 py-4 text-sm font-medium text-background transition hover:bg-foreground/90"
           >
             <Mail className="h-4 w-4" />
             {t.cta.button}

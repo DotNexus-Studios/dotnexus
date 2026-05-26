@@ -9,7 +9,7 @@ export function Approach() {
 
   return (
     <section id="approach" className="relative border-y border-border px-6 py-28">
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(255,255,255,0.04),transparent_70%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(0,0,0,0.03),transparent_70%)]" />
       <div className="relative mx-auto max-w-6xl">
         <SectionLabel>{t.approach.label}</SectionLabel>
         <motion.h2
@@ -51,7 +51,7 @@ export function Approach() {
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mt-12 overflow-hidden rounded-2xl border border-border-strong bg-gradient-to-br from-white/[0.08] to-transparent p-10 sm:p-14"
+          className="mt-12 overflow-hidden rounded-2xl border border-border-strong bg-gradient-to-br from-black/[0.04] to-transparent p-10 sm:p-14"
         >
           <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
             <div className="max-w-xl">

@@ -35,7 +35,7 @@ export function Header() {
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "border-b border-border bg-black/85 backdrop-blur-xl"
+          ? "border-b border-border bg-white/85 backdrop-blur-xl"
           : "bg-transparent"
       }`}
     >
@@ -58,7 +58,7 @@ export function Header() {
           <LanguageToggle />
           <a
             href="#contact"
-            className="hidden rounded-full border border-border-strong bg-white px-4 py-2 text-sm font-medium text-black transition hover:bg-white/90 sm:inline-block"
+            className="hidden rounded-full border border-border-strong bg-foreground px-4 py-2 text-sm font-medium text-background transition hover:bg-foreground/90 sm:inline-block"
           >
             {t.nav.contact}
           </a>
@@ -76,7 +76,7 @@ export function Header() {
       <motion.div
         initial={false}
         animate={open ? { height: "auto", opacity: 1 } : { height: 0, opacity: 0 }}
-        className="overflow-hidden border-b border-border bg-black/95 backdrop-blur-xl md:hidden"
+        className="overflow-hidden border-b border-border bg-white/95 backdrop-blur-xl md:hidden"
       >
         <nav className="flex flex-col gap-1 px-6 py-4">
           {links.map((link) => (

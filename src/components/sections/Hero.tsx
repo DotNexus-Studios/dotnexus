@@ -41,7 +41,7 @@ export function Hero() {
           >
             <span className="text-gradient">{t.hero.title}</span>
             <br />
-            <span className="text-white">{t.hero.titleAccent}</span>
+            <span className="text-foreground">{t.hero.titleAccent}</span>
           </motion.h1>
 
           <motion.p
@@ -54,14 +54,14 @@ export function Hero() {
           <motion.div variants={fadeUp} className="mt-10 flex flex-wrap gap-4">
             <a
               href="#contact"
-              className="group inline-flex items-center gap-2 rounded-full bg-white px-6 py-3.5 text-sm font-medium text-black transition hover:bg-white/90"
+              className="group inline-flex items-center gap-2 rounded-full bg-foreground px-6 py-3.5 text-sm font-medium text-background transition hover:bg-foreground/90"
             >
               {t.hero.ctaPrimary}
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
             </a>
             <a
               href="#showcase"
-              className="inline-flex items-center gap-2 rounded-full border border-border-strong px-6 py-3.5 text-sm text-foreground transition hover:border-white/30 hover:bg-surface"
+              className="inline-flex items-center gap-2 rounded-full border border-border-strong px-6 py-3.5 text-sm text-foreground transition hover:border-foreground/30 hover:bg-surface"
             >
               {t.hero.ctaSecondary}
               <ArrowDownRight className="h-4 w-4" />
@@ -93,7 +93,7 @@ export function Hero() {
         transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
       >
         <div className="flex h-16 w-16 items-center justify-center rounded-full border border-border">
-          <div className="h-2 w-2 rounded-full bg-white" />
+          <div className="h-2 w-2 rounded-full bg-foreground" />
         </div>
       </motion.div>
     </section>

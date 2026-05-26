@@ -42,8 +42,8 @@ export function Marketing() {
               transition={{ delay: i * 0.08 }}
               className="flex gap-4 rounded-xl border border-border bg-surface p-5"
             >
-              <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-border-strong bg-black">
-                <Check className="h-4 w-4" strokeWidth={2} />
+              <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-border-strong bg-foreground">
+                <Check className="h-4 w-4 text-background" strokeWidth={2} />
               </span>
               <span className="text-sm leading-relaxed sm:text-base">{point}</span>
             </motion.li>

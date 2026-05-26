@@ -43,19 +43,19 @@ export function Showcase() {
           transition={{ duration: 0.6 }}
           className="group relative mt-16 block overflow-hidden rounded-2xl border border-border bg-surface"
         >
-          <div className="absolute inset-0 z-10 bg-gradient-to-t from-black via-black/40 to-transparent" />
-          <div className="relative aspect-[21/9] w-full overflow-hidden bg-neutral-950">
+          <div className="absolute inset-0 z-10 bg-gradient-to-t from-white via-white/50 to-transparent" />
+          <div className="relative aspect-[21/9] w-full overflow-hidden bg-neutral-100">
             <div className="absolute inset-0 grid-pattern opacity-40" />
             <motion.div
               className="absolute inset-0 flex items-center justify-center"
               animate={{ opacity: [0.4, 0.7, 0.4] }}
               transition={{ duration: 4, repeat: Infinity }}
             >
-              <span className="font-mono text-[12vw] font-bold tracking-tighter text-white/[0.06] sm:text-[8vw]">
+              <span className="font-mono text-[12vw] font-bold tracking-tighter text-black/[0.06] sm:text-[8vw]">
                 MASKING MASTER
               </span>
             </motion.div>
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(255,255,255,0.08),transparent_50%)]" />
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(0,0,0,0.06),transparent_50%)]" />
           </div>
 
           <div className="relative z-20 flex flex-col gap-6 p-8 sm:flex-row sm:items-end sm:justify-between sm:p-12">
@@ -76,7 +76,7 @@ export function Showcase() {
                 ))}
               </div>
             </div>
-            <span className="inline-flex w-fit items-center gap-2 rounded-full border border-border-strong bg-white px-5 py-2.5 text-sm font-medium text-black transition group-hover:bg-white/90">
+            <span className="inline-flex w-fit items-center gap-2 rounded-full border border-border-strong bg-foreground px-5 py-2.5 text-sm font-medium text-background transition group-hover:bg-foreground/90">
               {t.showcase.visit}
               <ArrowUpRight className="h-4 w-4" />
             </span>

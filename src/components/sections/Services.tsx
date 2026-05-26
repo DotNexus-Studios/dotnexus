@@ -45,9 +45,9 @@ export function Services() {
                 whileHover={{ y: -4 }}
                 className="group relative overflow-hidden rounded-2xl border border-border bg-surface p-8 transition-colors hover:border-border-strong hover:bg-surface-hover"
               >
-                <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-0 transition group-hover:opacity-100" />
-                <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-xl border border-border bg-black">
-                  <Icon className="h-5 w-5 text-foreground" strokeWidth={1.5} />
+                <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-foreground/15 to-transparent opacity-0 transition group-hover:opacity-100" />
+                <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-xl border border-border bg-foreground">
+                  <Icon className="h-5 w-5 text-background" strokeWidth={1.5} />
                 </div>
                 <h3 className="text-xl font-medium">{item.title}</h3>
                 <p className="mt-3 text-sm leading-relaxed text-muted">
