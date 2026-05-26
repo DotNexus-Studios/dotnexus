@@ -3,7 +3,7 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 
-const BRAND = "DOTNEXUS";
+const BRAND_TEXT = "NEXUS";
 
 /** Max 6s total: 5.5s animation + 0.5s fade */
 const FILL_DURATION = 1900;
@@ -39,12 +39,40 @@ function getDotRadius(spacing: number) {
   return spacing < 10 ? 1.35 : 1.6;
 }
 
+function drawBrandMark(
+  ctx: CanvasRenderingContext2D,
+  width: number,
+  height: number,
+  fontSize: number,
+  alpha = 1
+) {
+  ctx.save();
+  ctx.fillStyle = `rgba(0,0,0,${alpha})`;
+  ctx.font = `600 ${fontSize}px system-ui, -apple-system, sans-serif`;
+  ctx.textBaseline = "middle";
+
+  const textWidth = ctx.measureText(BRAND_TEXT).width;
+  const dotRadius = fontSize * 0.13;
+  const gap = fontSize * 0.38;
+  const totalWidth = dotRadius * 2 + gap + textWidth;
+  const centerY = height / 2;
+  const startX = width / 2 - totalWidth / 2;
+
+  ctx.beginPath();
+  ctx.arc(startX + dotRadius, centerY, dotRadius, 0, Math.PI * 2);
+  ctx.fill();
+
+  ctx.textAlign = "left";
+  ctx.fillText(BRAND_TEXT, startX + dotRadius * 2 + gap, centerY);
+  ctx.restore();
+}
+
 function measureBrandFontSize(
   ctx: CanvasRenderingContext2D,
   width: number
 ): number {
   const maxTextWidth = width * 0.9;
-  let fontSize = Math.floor(width / (BRAND.length * 0.62));
+  let fontSize = Math.floor(width / (BRAND_TEXT.length * 0.72));
   fontSize = Math.max(22, Math.min(fontSize, 80));
 
   const setFont = (size: number) => {
@@ -52,7 +80,10 @@ function measureBrandFontSize(
   };
 
   setFont(fontSize);
-  while (ctx.measureText(BRAND).width > maxTextWidth && fontSize > 18) {
+  while (
+    ctx.measureText(BRAND_TEXT).width + fontSize * 0.55 > maxTextWidth &&
+    fontSize > 18
+  ) {
     fontSize -= 1;
     setFont(fontSize);
   }
@@ -67,11 +98,7 @@ function createBrandLayout(width: number, height: number): BrandLayout {
   if (!ctx) return { fontSize: 32, targets: [] };
 
   const fontSize = measureBrandFontSize(ctx, width);
-  ctx.fillStyle = "#000";
-  ctx.font = `600 ${fontSize}px system-ui, -apple-system, sans-serif`;
-  ctx.textAlign = "center";
-  ctx.textBaseline = "middle";
-  ctx.fillText(BRAND, width / 2, height / 2);
+  drawBrandMark(ctx, width, height, fontSize);
 
   const { data } = ctx.getImageData(0, 0, width, height);
   const targets: { x: number; y: number }[] = [];
@@ -335,11 +362,7 @@ export function LoadingScreen({ onComplete }: { onComplete: () => void }) {
 
       if (isHold && morphT >= 1) {
         const textAlpha = Math.min(1, holdT) * 0.1;
-        ctx.font = `600 ${brandFontRef.current}px system-ui, -apple-system, sans-serif`;
-        ctx.textAlign = "center";
-        ctx.textBaseline = "middle";
-        ctx.fillStyle = `rgba(0,0,0,${textAlpha})`;
-        ctx.fillText(BRAND, w / 2, h / 2);
+        drawBrandMark(ctx, w, h, brandFontRef.current, textAlpha);
       }
 
       if (elapsed >= TOTAL_DURATION && !finishedRef.current) {

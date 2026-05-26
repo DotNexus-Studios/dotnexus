@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { BrandWordmark } from "@/components/ui/BrandWordmark";
 
 type LogoProps = {
   size?: "sm" | "md" | "lg";
@@ -28,9 +29,7 @@ export function Logo({ size = "md", showWordmark = true, className = "" }: LogoP
         priority={size === "md"}
       />
       {showWordmark && (
-        <span className="text-sm font-medium tracking-tight text-foreground group-hover:text-foreground/80">
-          DotNexus
-        </span>
+        <BrandWordmark className="group-hover:opacity-80" />
       )}
     </Link>
   );
