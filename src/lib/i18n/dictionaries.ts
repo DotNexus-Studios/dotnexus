@@ -25,6 +25,9 @@ const nl: Dictionary = {
       { value: "A-Z", label: "Van strategie tot executie" },
       { value: "Elke fase", label: "Startup tot corporate" },
     ],
+    dotsLabel: "Connecting the dots",
+    dotsHint:
+      "Scroll om vooruitgang te zien. De punten volgen je paginapositie en verbinden alleen tijdens beweging.",
   },
   services: {
     label: "Diensten",
@@ -198,6 +201,9 @@ const en: Dictionary = {
       { value: "A-Z", label: "Strategy through execution" },
       { value: "All stages", label: "Startup to corporate" },
     ],
+    dotsLabel: "Connecting the dots",
+    dotsHint:
+      "Scroll to see progress. Dots follow your page position and connect only while you move.",
   },
   services: {
     label: "Services",

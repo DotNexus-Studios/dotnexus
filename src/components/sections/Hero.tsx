@@ -93,7 +93,10 @@ export function Hero() {
           transition={{ delay: 1, duration: 1 }}
           className="mt-10"
         >
-          <HeroParticleField className="h-56 sm:h-72 md:h-80" />
+          <HeroParticleField
+            label={t.hero.dotsLabel}
+            hint={t.hero.dotsHint}
+          />
         </motion.div>
       </div>
 

@@ -8,14 +8,12 @@ const DEPTH_SPREAD = 280;
 const CONNECT_BASE = 72;
 const CONNECT_SCROLL_BOOST = 110;
 const SCROLL_IDLE_MS = 120;
+const MOTION_SCALE = 0.014;
 
 type Particle = {
-  x: number;
-  y: number;
-  z: number;
-  vx: number;
-  vy: number;
-  vz: number;
+  baseX: number;
+  baseY: number;
+  baseZ: number;
   phase: number;
 };
 
@@ -29,68 +27,80 @@ type Projected = {
 
 function createParticles(): Particle[] {
   return Array.from({ length: PARTICLE_COUNT }, () => ({
-    x: (Math.random() - 0.5) * 2,
-    y: (Math.random() - 0.5) * 2,
-    z: Math.random() * DEPTH_SPREAD,
-    vx: (Math.random() - 0.5) * 0.00035,
-    vy: (Math.random() - 0.5) * 0.00035,
-    vz: (Math.random() - 0.5) * 0.45,
+    baseX: (Math.random() - 0.5) * 1.8,
+    baseY: (Math.random() - 0.5) * 1.8,
+    baseZ: 40 + Math.random() * (DEPTH_SPREAD - 40),
     phase: Math.random() * Math.PI * 2,
   }));
+}
+
+/** Scroll position on the page drives motion (bidirectional, no time-based drift). */
+function getScrollMotion(container: HTMLElement): number {
+  const rect = container.getBoundingClientRect();
+  const vh = window.innerHeight;
+  const startLine = vh * 0.88;
+  const traveledPx = startLine - rect.top;
+  return traveledPx * MOTION_SCALE;
+}
+
+function getScrollProgress(container: HTMLElement): number {
+  const rect = container.getBoundingClientRect();
+  const vh = window.innerHeight;
+  const start = vh * 0.88;
+  const end = -rect.height * 0.3;
+  return Math.max(0, Math.min(1, (start - rect.top) / (start - end)));
 }
 
 function project(
   p: Particle,
   width: number,
   height: number,
-  motionTime: number,
-  animate: boolean
+  motion: number
 ): Projected {
-  const driftX = animate ? Math.sin(motionTime * 0.55 + p.phase) * 0.12 : 0;
-  const driftY = animate ? Math.cos(motionTime * 0.48 + p.phase * 1.3) * 0.1 : 0;
-  const driftZ = animate ? Math.sin(motionTime * 0.35 + p.phase * 0.7) * 28 : 0;
+  const x =
+    p.baseX +
+    Math.sin(motion * 1.05 + p.phase) * 0.38 +
+    Math.cos(motion * 0.55 + p.phase * 1.7) * 0.12;
+  const y =
+    p.baseY +
+    Math.cos(motion * 0.92 + p.phase * 1.25) * 0.36 +
+    Math.sin(motion * 0.48 + p.phase * 0.9) * 0.1;
+  const z = Math.max(
+    35,
+    p.baseZ + Math.sin(motion * 0.68 + p.phase * 0.75) * 52
+  );
 
-  const z = Math.max(40, p.z + driftZ);
   const scale = FOCAL / (FOCAL + z);
   const spreadX = width * 0.46;
   const spreadY = height * 0.42;
 
-  const sx = width * 0.5 + (p.x + driftX) * spreadX * scale;
-  const sy = height * 0.5 + (p.y + driftY) * spreadY * scale;
+  const sx = width * 0.5 + x * spreadX * scale;
+  const sy = height * 0.5 + y * spreadY * scale;
   const radius = (1.1 + scale * 2.8) * (0.85 + scale * 0.35);
   const opacity = 0.18 + scale * 0.72;
 
   return { sx, sy, radius, opacity, z };
 }
 
-function updateParticles(particles: Particle[], motionTime: number) {
-  for (const p of particles) {
-    p.x += p.vx + Math.sin(motionTime * 0.4 + p.phase) * 0.00008;
-    p.y += p.vy + Math.cos(motionTime * 0.38 + p.phase) * 0.00008;
-    p.z += p.vz;
+type HeroParticleFieldProps = {
+  className?: string;
+  label: string;
+  hint: string;
+};
 
-    if (p.x < -1.1 || p.x > 1.1) p.vx *= -1;
-    if (p.y < -1.1 || p.y > 1.1) p.vy *= -1;
-    if (p.z < 30 || p.z > DEPTH_SPREAD) p.vz *= -1;
-
-    p.x = Math.max(-1.15, Math.min(1.15, p.x));
-    p.y = Math.max(-1.15, Math.min(1.15, p.y));
-    p.z = Math.max(25, Math.min(DEPTH_SPREAD, p.z));
-  }
-}
-
-export function HeroParticleField({ className = "" }: { className?: string }) {
+export function HeroParticleField({
+  className = "",
+  label,
+  hint,
+}: HeroParticleFieldProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const particlesRef = useRef<Particle[]>(createParticles());
-  const scrollProgressRef = useRef(0);
   const inViewRef = useRef(false);
   const scrollingRef = useRef(false);
-  const motionTimeRef = useRef(0);
-  const lastFrameRef = useRef(0);
-  const rafRef = useRef<number>(0);
   const scrollIdleTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const reducedMotionRef = useRef(false);
+  const drawRef = useRef<(() => void) | null>(null);
 
   useEffect(() => {
     const container = containerRef.current;
@@ -101,20 +111,12 @@ export function HeroParticleField({ className = "" }: { className?: string }) {
       "(prefers-reduced-motion: reduce)"
     ).matches;
 
-    const updateScrollProgress = () => {
-      const rect = container.getBoundingClientRect();
-      const vh = window.innerHeight;
-      const start = vh * 0.85;
-      const end = -rect.height * 0.35;
-      const raw = (start - rect.top) / (start - end);
-      scrollProgressRef.current = Math.max(0, Math.min(1, raw));
-    };
-
     const markScrolling = () => {
       scrollingRef.current = true;
       if (scrollIdleTimerRef.current) clearTimeout(scrollIdleTimerRef.current);
       scrollIdleTimerRef.current = setTimeout(() => {
         scrollingRef.current = false;
+        drawRef.current?.();
       }, SCROLL_IDLE_MS);
     };
 
@@ -128,45 +130,34 @@ export function HeroParticleField({ className = "" }: { className?: string }) {
       canvas.style.height = `${h}px`;
     };
 
-    resize();
-    updateScrollProgress();
-
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
-    const draw = (time: number) => {
+    const draw = () => {
+      if (!inViewRef.current) return;
+
       const dpr = Math.min(window.devicePixelRatio || 1, 2);
       const w = canvas.width / dpr;
       const h = canvas.height / dpr;
+      if (w <= 0 || h <= 0) return;
 
-      const delta = lastFrameRef.current ? (time - lastFrameRef.current) * 0.001 : 0;
-      lastFrameRef.current = time;
+      const motion = getScrollMotion(container);
+      const scroll = getScrollProgress(container);
+      const showLinks =
+        scrollingRef.current && !reducedMotionRef.current;
 
-      const active =
-        inViewRef.current &&
-        scrollingRef.current &&
-        !reducedMotionRef.current;
-
-      if (active) {
-        motionTimeRef.current += delta;
-        updateParticles(particlesRef.current, motionTimeRef.current);
-      }
-
-      const scroll = scrollProgressRef.current;
-      const connectDist = active
-        ? CONNECT_BASE + scroll * CONNECT_SCROLL_BOOST
-        : 0;
-      const linkStrength = active ? 0.08 + scroll * 0.42 : 0;
+      const connectDist = CONNECT_BASE + scroll * CONNECT_SCROLL_BOOST;
+      const linkStrength = 0.1 + scroll * 0.45;
 
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
       ctx.clearRect(0, 0, w, h);
 
       const projected = particlesRef.current.map((p) =>
-        project(p, w, h, motionTimeRef.current, active)
+        project(p, w, h, motion)
       );
       projected.sort((a, b) => a.z - b.z);
 
-      if (active) {
+      if (showLinks) {
         for (let i = 0; i < projected.length; i++) {
           for (let j = i + 1; j < projected.length; j++) {
             const a = projected[i];
@@ -183,7 +174,7 @@ export function HeroParticleField({ className = "" }: { className?: string }) {
             ctx.moveTo(a.sx, a.sy);
             ctx.lineTo(b.sx, b.sy);
             ctx.strokeStyle = `rgba(0,0,0,${alpha})`;
-            ctx.lineWidth = 0.5 + scroll * 0.4;
+            ctx.lineWidth = 0.55 + scroll * 0.35;
             ctx.stroke();
           }
         }
@@ -197,22 +188,21 @@ export function HeroParticleField({ className = "" }: { className?: string }) {
       }
     };
 
-    const loop = (now: number) => {
-      if (inViewRef.current) {
-        draw(now);
-      }
-      rafRef.current = requestAnimationFrame(loop);
-    };
+    drawRef.current = draw;
 
-    rafRef.current = requestAnimationFrame(loop);
+    resize();
+    draw();
 
     const onScroll = () => {
       if (!inViewRef.current) return;
       markScrolling();
-      updateScrollProgress();
+      draw();
     };
 
-    const onResize = () => resize();
+    const onResize = () => {
+      resize();
+      draw();
+    };
 
     window.addEventListener("scroll", onScroll, { passive: true });
     window.addEventListener("resize", onResize);
@@ -220,20 +210,20 @@ export function HeroParticleField({ className = "" }: { className?: string }) {
     const io = new IntersectionObserver(
       ([entry]) => {
         inViewRef.current = entry.isIntersecting;
-        if (entry.isIntersecting) {
-          updateScrollProgress();
-          draw(performance.now());
-        }
+        if (entry.isIntersecting) draw();
       },
-      { threshold: 0.12 }
+      { threshold: 0.08 }
     );
     io.observe(container);
 
-    const ro = new ResizeObserver(() => resize());
+    const ro = new ResizeObserver(() => {
+      resize();
+      draw();
+    });
     ro.observe(container);
 
     return () => {
-      cancelAnimationFrame(rafRef.current);
+      drawRef.current = null;
       if (scrollIdleTimerRef.current) clearTimeout(scrollIdleTimerRef.current);
       window.removeEventListener("scroll", onScroll);
       window.removeEventListener("resize", onResize);
@@ -243,12 +233,20 @@ export function HeroParticleField({ className = "" }: { className?: string }) {
   }, []);
 
   return (
-    <div
-      ref={containerRef}
-      className={`relative w-full overflow-hidden ${className}`}
-      aria-hidden
-    >
-      <canvas ref={canvasRef} className="block h-full w-full" />
+    <div className={className}>
+      <div
+        ref={containerRef}
+        className="relative h-56 w-full overflow-hidden sm:h-72 md:h-80"
+        aria-hidden
+      >
+        <canvas ref={canvasRef} className="block h-full w-full" />
+      </div>
+      <div className="mt-5 flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
+        <p className="font-mono text-xs tracking-[0.2em] text-foreground uppercase">
+          {label}
+        </p>
+        <p className="max-w-md text-sm text-muted">{hint}</p>
+      </div>
     </div>
   );
 }

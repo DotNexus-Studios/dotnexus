@@ -19,6 +19,8 @@ export type Dictionary = {
     ctaPrimary: string;
     ctaSecondary: string;
     stats: { value: string; label: string }[];
+    dotsLabel: string;
+    dotsHint: string;
   };
   services: {
     label: string;
