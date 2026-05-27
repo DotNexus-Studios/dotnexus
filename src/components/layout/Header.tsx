@@ -2,6 +2,8 @@
 
 import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { useLocale } from "@/context/LocaleProvider";
 import { LanguageToggle } from "@/components/ui/LanguageToggle";
@@ -9,6 +11,7 @@ import { Logo } from "@/components/ui/Logo";
 
 export function Header() {
   const { t } = useLocale();
+  const pathname = usePathname();
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   useEffect(() => {
@@ -24,12 +27,20 @@ export function Header() {
     };
   }, [open]);
 
+  const hashPrefix = pathname === "/" ? "" : "/";
+
   const links = [
-    { href: "#services", label: t.nav.services },
-    { href: "#approach", label: t.nav.approach },
-    { href: "#showcase", label: t.nav.showcase },
-    { href: "#contact", label: t.nav.contact },
+    { href: "/about", label: t.nav.about, isRoute: true },
+    { href: `${hashPrefix}#services`, label: t.nav.services, isRoute: false },
+    { href: `${hashPrefix}#approach`, label: t.nav.approach, isRoute: false },
+    { href: `${hashPrefix}#showcase`, label: t.nav.showcase, isRoute: false },
+    { href: `${hashPrefix}#contact`, label: t.nav.contact, isRoute: false },
   ];
+
+  const linkClass =
+    "text-sm text-muted transition-colors hover:text-foreground";
+  const mobileLinkClass =
+    "rounded-lg px-3 py-3 text-lg text-foreground/90 hover:bg-surface";
 
   return (
     <header
@@ -43,15 +54,23 @@ export function Header() {
         <Logo size="md" />
 
         <nav className="hidden items-center gap-8 md:flex">
-          {links.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              className="text-sm text-muted transition-colors hover:text-foreground"
-            >
-              {link.label}
-            </a>
-          ))}
+          {links.map((link) =>
+            link.isRoute ? (
+              <Link
+                key={link.href}
+                href={link.href}
+                className={`${linkClass} ${
+                  pathname === link.href ? "text-foreground" : ""
+                }`}
+              >
+                {link.label}
+              </Link>
+            ) : (
+              <a key={link.href} href={link.href} className={linkClass}>
+                {link.label}
+              </a>
+            ),
+          )}
         </nav>
 
         <div className="flex items-center gap-3">
@@ -79,16 +98,29 @@ export function Header() {
         className="overflow-hidden border-b border-border bg-white/95 backdrop-blur-xl md:hidden"
       >
         <nav className="flex flex-col gap-1 px-6 py-4">
-          {links.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              onClick={() => setOpen(false)}
-              className="rounded-lg px-3 py-3 text-lg text-foreground/90 hover:bg-surface"
-            >
-              {link.label}
-            </a>
-          ))}
+          {links.map((link) =>
+            link.isRoute ? (
+              <Link
+                key={link.href}
+                href={link.href}
+                onClick={() => setOpen(false)}
+                className={`${mobileLinkClass} ${
+                  pathname === link.href ? "bg-surface" : ""
+                }`}
+              >
+                {link.label}
+              </Link>
+            ) : (
+              <a
+                key={link.href}
+                href={link.href}
+                onClick={() => setOpen(false)}
+                className={mobileLinkClass}
+              >
+                {link.label}
+              </a>
+            ),
+          )}
         </nav>
       </motion.div>
     </header>

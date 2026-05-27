@@ -7,10 +7,44 @@ const nl: Dictionary = {
       "Growth bureau voor startups en corporates: strategie, branding, content, webdevelopment, AI, workflow automation en data-gedreven groei.",
   },
   nav: {
+    about: "Over ons",
     services: "Diensten",
     approach: "Aanpak",
     showcase: "Werk",
     contact: "Contact",
+  },
+  about: {
+    label: "Team",
+    title: "Wie zijn wij?",
+    titleAccent: "Mensen achter DotNexus.",
+    subtitle:
+      "Twee ondernemers met complementaire expertise: creatief vakmanschap, marketing en strategische bedrijfsvoering. Samen zetten we beweging neer voor merken die willen groeien.",
+    company: {
+      label: "Over DotNexus",
+      title: "Growth bureau met ondernemers-DNA",
+      description:
+        "DotNexus is een growth bureau voor startups en corporates. Wij leveren geen los product, maar zetten momentum neer: strategie, branding, content, web, AI en data werken samen voor de volgende stap. Onze kracht zit in de combinatie van creativiteit, zakelijke ervaring en technische kennis.",
+    },
+    team: {
+      label: "Team",
+      title: "Onze persona's",
+      members: [
+        {
+          name: "Nol Algra",
+          role: "Social media marketing & creatief ondernemer",
+          bio: "Ik ben Arnoldus, 62 jaar. Ik studeerde Design and Photography aan de High School for the Arts en studeerde af in 1986. Met jarenlange ervaring in het opzetten van verschillende bedrijven in grafisch ontwerp, fotografie, marketing en kunst, raakte ik betrokken bij dit project. Tegenwoordig specialiseer ik me in social media marketingstrategieën. Door mijn bedrijfskennis en marketingexpertise te combineren, ben ik ervan overtuigd dat we dit bedrijf kunnen laten groeien tot een succesvol merk.",
+          tags: ["Design", "Fotografie", "Marketing", "Social media"],
+          image: "/team/nol-algra.png",
+        },
+        {
+          name: "Tim Verkuil, BSc Eng.",
+          role: "Strategisch business consultant",
+          bio: "Mijn naam is Tim, ik ben 30 jaar oud. Ik woon in Utrecht, samen met mijn vriendin. Ik ben als enig kind geboren in een ondernemersgezin; mijn vader had een bouwbedrijf en mijn moeder is kunstenaar en beeldhouwer. Na het afronden van mijn bachelor Water Management in 2022 en het behalen van mijn ingenieurstitel, raakte ik betrokken bij meerdere bedrijven als strategisch business consultant. Met mijn creatieve aanpak van bedrijfsstrategie en technische kennis weet ik elk bedrijf naar een hoger niveau te tillen.",
+          tags: ["Strategie", "Engineering", "Consultancy", "Groei"],
+          image: "/team/tim-verkuil.png",
+        },
+      ],
+    },
   },
   hero: {
     eyebrow: "Growth bureau",
@@ -183,10 +217,44 @@ const en: Dictionary = {
       "Growth agency for startups and corporates: strategy, branding, content, web development, AI, workflow automation, and data-driven growth.",
   },
   nav: {
+    about: "About us",
     services: "Services",
     approach: "Approach",
     showcase: "Work",
     contact: "Contact",
+  },
+  about: {
+    label: "Team",
+    title: "Who are we?",
+    titleAccent: "The people behind DotNexus.",
+    subtitle:
+      "Two entrepreneurs with complementary expertise: creative craft, marketing, and strategic business operations. Together we create momentum for brands that want to grow.",
+    company: {
+      label: "About DotNexus",
+      title: "Growth agency with entrepreneurial DNA",
+      description:
+        "DotNexus is a growth agency for startups and corporates. We don't deliver a standalone product, we create momentum: strategy, branding, content, web, AI, and data work together for your next step. Our strength lies in the combination of creativity, business experience, and technical knowledge.",
+    },
+    team: {
+      label: "Team",
+      title: "Our personas",
+      members: [
+        {
+          name: "Nol Algra",
+          role: "Social media marketing & creative entrepreneur",
+          bio: "I'm Arnoldus, 62 years old. I studied Design and Photography at the High School for the Arts, graduating in 1986. With years of experience setting up various companies in graphic design, photography, marketing, and art, I became involved in this project. Nowadays, I specialize in social media marketing strategies. By combining my business knowledge and marketing expertise, I'm confident that we can grow this company into a successful brand.",
+          tags: ["Design", "Photography", "Marketing", "Social media"],
+          image: "/team/nol-algra.png",
+        },
+        {
+          name: "Tim Verkuil, BSc Eng.",
+          role: "Strategic business consultant",
+          bio: "My name is Tim, and I'm 30 years old. I live in Utrecht, the Netherlands, with my girlfriend. I was born an only child into an entrepreneurial family; my father owned a construction company, and my mother is an artist and sculptor. After completing my bachelor's degree in Water Management in 2022 and becoming an engineer, I got involved in multiple businesses as a strategic business consultant. With my creative approach to business strategy and technical knowledge, I know I can elevate any business.",
+          tags: ["Strategy", "Engineering", "Consulting", "Growth"],
+          image: "/team/tim-verkuil.png",
+        },
+      ],
+    },
   },
   hero: {
     eyebrow: "Growth agency",

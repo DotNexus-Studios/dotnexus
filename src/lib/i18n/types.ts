@@ -6,10 +6,33 @@ export type Dictionary = {
     description: string;
   };
   nav: {
+    about: string;
     services: string;
     approach: string;
     showcase: string;
     contact: string;
+  };
+  about: {
+    label: string;
+    title: string;
+    titleAccent: string;
+    subtitle: string;
+    company: {
+      label: string;
+      title: string;
+      description: string;
+    };
+    team: {
+      label: string;
+      title: string;
+      members: {
+        name: string;
+        role: string;
+        bio: string;
+        tags: string[];
+        image: string;
+      }[];
+    };
   };
   hero: {
     eyebrow: string;
