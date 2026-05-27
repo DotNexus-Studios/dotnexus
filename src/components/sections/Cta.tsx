@@ -26,11 +26,13 @@ export function Cta() {
             {t.cta.title}
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-muted">{t.cta.subtitle}</p>
-          <EmailLink className="mt-10 inline-flex items-center gap-3 rounded-full bg-foreground px-8 py-4 text-sm font-medium text-background transition hover:bg-foreground/90">
-            <Mail className="h-4 w-4" />
-            {t.cta.button}
-          </EmailLink>
-          <ObfuscatedEmailText className="mt-6 font-mono text-sm text-muted" />
+          <div className="mt-10 flex flex-col items-center gap-6">
+            <EmailLink className="inline-flex items-center gap-3 rounded-full bg-foreground px-8 py-4 text-sm font-medium text-background transition hover:bg-foreground/90">
+              <Mail className="h-4 w-4" />
+              {t.cta.button}
+            </EmailLink>
+            <ObfuscatedEmailText className="font-mono text-sm text-muted" />
+          </div>
         </div>
       </motion.div>
     </section>
