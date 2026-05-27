@@ -32,13 +32,13 @@ export function Team() {
               transition={{ delay: i * 0.1 }}
               className="overflow-hidden rounded-2xl border border-border"
             >
-              <div className="relative aspect-[4/3] w-full bg-surface">
+              <div className="relative aspect-square w-full bg-surface">
                 <Image
                   src={member.image}
                   alt={member.name}
                   fill
                   sizes="(max-width: 1024px) 100vw, 50vw"
-                  className="object-cover object-top"
+                  className="object-cover"
                 />
               </div>
               <div className="flex flex-col p-8">

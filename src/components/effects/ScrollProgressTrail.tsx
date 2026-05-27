@@ -82,7 +82,7 @@ export function ScrollProgressTrail({
       const contentWidth = Math.min(window.innerWidth - 48, 1152);
       const sideMargin = (window.innerWidth - contentWidth) / 2;
 
-      if (sideMargin < 52) {
+      if (sideMargin < 40) {
         setLayout({ height: 0, dots: [], visible: false });
         return;
       }
@@ -151,7 +151,7 @@ export function ScrollProgressTrail({
     <div
       className="pointer-events-none absolute inset-y-0 z-0"
       style={{
-        left: "max(12px, calc((100% - min(calc(100% - 3rem), 72rem)) / 2 - 52px))",
+        left: "max(20px, calc((100% - min(calc(100% - 3rem), 72rem)) / 2 - 108px))",
         width: 56,
       }}
       aria-hidden
