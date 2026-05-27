@@ -14,7 +14,7 @@ type ScrollProgressTrailProps = {
 
 const ANCHOR_SELECTOR = "[data-scroll-dot]";
 const ANCHOR_X = 30;
-const X_PATTERN = [12, 44, 20, 48, 16, 40, 24, 36];
+const X_PATTERN = [4, 8, 2, 10, 6, 3, 9, 5];
 const SCROLL_MARKER_RATIO = 0.42;
 
 function buildDotPath(anchors: { y: number }[]): Dot[] {
@@ -186,10 +186,10 @@ export function ScrollProgressTrail({
               x2={x2}
               y2={y2}
               stroke="rgba(0,0,0,0.85)"
-              strokeWidth={reached ? 1.1 : 0.9}
+              strokeWidth={reached ? 1.35 : 1.1}
               strokeLinecap="round"
               style={{
-                opacity: reached ? 0.55 : 0.25 + progress * 0.35,
+                opacity: reached ? 0.58 : 0.28 + progress * 0.35,
                 transition: reducedMotion ? undefined : "opacity 0.15s ease",
               }}
             />
@@ -201,7 +201,7 @@ export function ScrollProgressTrail({
           const distance = dot.y - scrollMarker;
           const upcoming = distance > 0 && distance < 120;
           const opacity = reached ? 0.9 : upcoming ? 0.35 : 0.18;
-          const radius = dot.isAnchor ? 4.5 : 3;
+          const radius = dot.isAnchor ? 5.5 : 3.75;
 
           return (
             <circle

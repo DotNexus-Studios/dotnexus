@@ -32,11 +32,11 @@ type BrandLayout = {
 function getSpacing(width: number) {
   if (width < 400) return 9;
   if (width < 768) return 11;
-  return 13;
+  return 12;
 }
 
 function getDotRadius(spacing: number) {
-  return spacing < 10 ? 1.35 : 1.6;
+  return spacing < 10 ? 1.35 : 1.55;
 }
 
 function drawBrandMark(
@@ -48,34 +48,101 @@ function drawBrandMark(
 ) {
   ctx.save();
   ctx.fillStyle = `rgba(0,0,0,${alpha})`;
-  ctx.font = `600 ${fontSize}px system-ui, -apple-system, sans-serif`;
-  ctx.textAlign = "center";
+  ctx.font = `700 ${fontSize}px system-ui, -apple-system, sans-serif`;
   ctx.textBaseline = "middle";
-  ctx.fillText(BRAND_TEXT, width / 2, height / 2);
+
+  const letterSpacing = fontSize * 0.045;
+  const chars = BRAND_TEXT.split("");
+  const charWidths = chars.map((char) => ctx.measureText(char).width);
+  const totalWidth =
+    charWidths.reduce((sum, w) => sum + w, 0) +
+    letterSpacing * (chars.length - 1);
+
+  let x = (width - totalWidth) / 2;
+  const y = height / 2;
+
+  for (let i = 0; i < chars.length; i++) {
+    ctx.fillText(chars[i], x, y);
+    x += charWidths[i] + letterSpacing;
+  }
+
   ctx.restore();
+}
+
+function measureBrandTextWidth(
+  ctx: CanvasRenderingContext2D,
+  fontSize: number,
+): number {
+  const letterSpacing = fontSize * 0.045;
+  const chars = BRAND_TEXT.split("");
+  const charWidths = chars.map((char) => ctx.measureText(char).width);
+  return (
+    charWidths.reduce((sum, w) => sum + w, 0) +
+    letterSpacing * (chars.length - 1)
+  );
 }
 
 function measureBrandFontSize(
   ctx: CanvasRenderingContext2D,
   width: number
 ): number {
-  const maxTextWidth = width * 0.9;
-  let fontSize = Math.floor(width / (BRAND_TEXT.length * 0.62));
-  fontSize = Math.max(22, Math.min(fontSize, 80));
+  const maxTextWidth = width * 0.88;
+  let fontSize = Math.floor(width / (BRAND_TEXT.length * 0.68));
+  fontSize = Math.max(22, Math.min(fontSize, 72));
 
   const setFont = (size: number) => {
-    ctx.font = `600 ${size}px system-ui, -apple-system, sans-serif`;
+    ctx.font = `700 ${size}px system-ui, -apple-system, sans-serif`;
   };
 
   setFont(fontSize);
-  while (ctx.measureText(BRAND_TEXT).width > maxTextWidth && fontSize > 18) {
+  while (measureBrandTextWidth(ctx, fontSize) > maxTextWidth && fontSize > 18) {
     fontSize -= 1;
     setFont(fontSize);
   }
   return fontSize;
 }
 
-function createBrandLayout(width: number, height: number): BrandLayout {
+/** Evenly sample text pixels so strokes don't cluster at horizontal bars. */
+function sampleBrandTargets(
+  data: Uint8ClampedArray,
+  width: number,
+  height: number,
+  spacing: number,
+  isDesktop: boolean,
+): { x: number; y: number }[] {
+  const cellSize = isDesktop
+    ? Math.max(6, Math.round(spacing * 0.92))
+    : Math.max(4, Math.round(spacing * 0.75));
+  const bins = new Map<string, { x: number; y: number; score: number }>();
+  const scanStep = isDesktop ? 2 : 3;
+
+  for (let y = 0; y < height; y += scanStep) {
+    for (let x = 0; x < width; x += scanStep) {
+      const alpha = data[(y * width + x) * 4 + 3];
+      if (alpha <= 100) continue;
+
+      const bx = Math.floor(x / cellSize);
+      const by = Math.floor(y / cellSize);
+      const key = `${bx},${by}`;
+      const cx = bx * cellSize + cellSize / 2;
+      const cy = by * cellSize + cellSize / 2;
+      const score = -Math.hypot(x - cx, y - cy);
+      const existing = bins.get(key);
+
+      if (!existing || score > existing.score) {
+        bins.set(key, { x, y, score });
+      }
+    }
+  }
+
+  return Array.from(bins.values()).map(({ x, y }) => ({ x, y }));
+}
+
+function createBrandLayout(
+  width: number,
+  height: number,
+  spacing: number,
+): BrandLayout {
   const canvas = document.createElement("canvas");
   canvas.width = width;
   canvas.height = height;
@@ -86,24 +153,25 @@ function createBrandLayout(width: number, height: number): BrandLayout {
   drawBrandMark(ctx, width, height, fontSize);
 
   const { data } = ctx.getImageData(0, 0, width, height);
-  const targets: { x: number; y: number }[] = [];
-  const step = width < 768 ? 3 : 4;
-
-  for (let y = 0; y < height; y += step) {
-    for (let x = 0; x < width; x += step) {
-      const alpha = data[(y * width + x) * 4 + 3];
-      if (alpha > 100) targets.push({ x, y });
-    }
-  }
+  const isDesktop = width >= 768;
+  const targets = sampleBrandTargets(data, width, height, spacing, isDesktop);
 
   return { fontSize, targets };
 }
 
 function assignBrandDots(gridDots: Dot[], layout: BrandLayout, spacing: number) {
   const used = new Set<number>();
-  const maxDist = spacing * (spacing < 10 ? 4 : 3.2);
+  const isDesktop = spacing >= 12;
+  const maxDist = spacing * (isDesktop ? 4.2 : spacing < 10 ? 4 : 3.2);
+  const center = sizeCenter(layout.targets);
 
-  for (const target of layout.targets) {
+  const sortedTargets = [...layout.targets].sort((a, b) => {
+    const da = Math.hypot(a.x - center.x, a.y - center.y);
+    const db = Math.hypot(b.x - center.x, b.y - center.y);
+    return da - db;
+  });
+
+  for (const target of sortedTargets) {
     let bestIdx = -1;
     let bestDist = Infinity;
     for (let i = 0; i < gridDots.length; i++) {
@@ -122,6 +190,13 @@ function assignBrandDots(gridDots: Dot[], layout: BrandLayout, spacing: number) 
       dot.brandY = target.y;
     }
   }
+}
+
+function sizeCenter(targets: { x: number; y: number }[]) {
+  if (targets.length === 0) return { x: 0, y: 0 };
+  const x = targets.reduce((sum, t) => sum + t.x, 0) / targets.length;
+  const y = targets.reduce((sum, t) => sum + t.y, 0) / targets.length;
+  return { x, y };
 }
 
 function buildGrid(width: number, height: number): {
@@ -150,7 +225,7 @@ function buildGrid(width: number, height: number): {
     }
   }
 
-  const layout = createBrandLayout(width, height);
+  const layout = createBrandLayout(width, height, spacing);
   assignBrandDots(dots, layout, spacing);
   return { dots, spacing, brandFontSize: layout.fontSize };
 }
@@ -323,14 +398,38 @@ export function LoadingScreen({ onComplete }: { onComplete: () => void }) {
         ctx.strokeStyle = emphasize
           ? `rgba(0,0,0,${Math.min(strength * 2, 0.85)})`
           : `rgba(0,0,0,${strength})`;
-        ctx.lineWidth = emphasize ? 1.2 : 0.6;
+        ctx.lineWidth = emphasize ? 1.15 : 0.6;
         ctx.stroke();
       };
 
-      for (const a of live) {
-        for (const [dx, dy] of neighbors) {
-          const b = byCell.get(`${a.gx + dx},${a.gy + dy}`);
-          if (b) drawLink(a, b);
+      const useBrandLinks = morphT > 0.35 || isHold;
+
+      if (useBrandLinks) {
+        const brandLive = live.filter((p) => p.isBrand);
+        const maxLinkDist = spacing * 1.55;
+        const maxNeighbors = 4;
+
+        for (let i = 0; i < brandLive.length; i++) {
+          const a = brandLive[i];
+          const nearby = brandLive
+            .map((b, j) => ({
+              j,
+              dist: Math.hypot(a.x - b.x, a.y - b.y),
+            }))
+            .filter(({ j, dist }) => j !== i && dist <= maxLinkDist)
+            .sort((x, y) => x.dist - y.dist)
+            .slice(0, maxNeighbors);
+
+          for (const { j } of nearby) {
+            if (i < j) drawLink(a, brandLive[j]);
+          }
+        }
+      } else {
+        for (const a of live) {
+          for (const [dx, dy] of neighbors) {
+            const b = byCell.get(`${a.gx + dx},${a.gy + dy}`);
+            if (b) drawLink(a, b);
+          }
         }
       }
 
