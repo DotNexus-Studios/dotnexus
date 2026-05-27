@@ -32,34 +32,32 @@ export function Team() {
               transition={{ delay: i * 0.1 }}
               className="overflow-hidden rounded-2xl border border-border"
             >
-              <div className="flex flex-col sm:flex-row">
-                <div className="relative mx-auto aspect-square w-48 shrink-0 sm:mx-0 sm:w-56">
-                  <Image
-                    src={member.image}
-                    alt={member.name}
-                    fill
-                    sizes="(max-width: 640px) 192px, 224px"
-                    className="object-cover"
-                  />
-                </div>
-                <div className="flex flex-1 flex-col p-8">
-                  <p className="font-mono text-xs tracking-widest text-muted uppercase">
-                    {member.role}
-                  </p>
-                  <h3 className="mt-2 text-2xl font-semibold">{member.name}</h3>
-                  <p className="mt-4 flex-1 text-sm leading-relaxed text-muted">
-                    {member.bio}
-                  </p>
-                  <div className="mt-6 flex flex-wrap gap-2">
-                    {member.tags.map((tag) => (
-                      <span
-                        key={tag}
-                        className="rounded-full border border-border px-3 py-1 font-mono text-[10px] tracking-wider text-muted uppercase"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
+              <div className="relative aspect-[4/3] w-full bg-surface">
+                <Image
+                  src={member.image}
+                  alt={member.name}
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  className="object-cover object-top"
+                />
+              </div>
+              <div className="flex flex-col p-8">
+                <p className="font-mono text-xs tracking-widest text-muted uppercase">
+                  {member.role}
+                </p>
+                <h3 className="mt-2 text-2xl font-semibold">{member.name}</h3>
+                <p className="mt-4 flex-1 text-sm leading-relaxed text-muted">
+                  {member.bio}
+                </p>
+                <div className="mt-6 flex flex-wrap gap-2">
+                  {member.tags.map((tag) => (
+                    <span
+                      key={tag}
+                      className="rounded-full border border-border px-3 py-1 font-mono text-[10px] tracking-wider text-muted uppercase"
+                    >
+                      {tag}
+                    </span>
+                  ))}
                 </div>
               </div>
             </motion.article>

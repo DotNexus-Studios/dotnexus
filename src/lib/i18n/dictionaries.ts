@@ -32,14 +32,14 @@ const nl: Dictionary = {
         {
           name: "Nol Algra",
           role: "Social media marketing & creatief ondernemer",
-          bio: "Ik ben Arnoldus, 62 jaar. Ik studeerde Design and Photography aan de High School for the Arts en studeerde af in 1986. Met jarenlange ervaring in het opzetten van verschillende bedrijven in grafisch ontwerp, fotografie, marketing en kunst, raakte ik betrokken bij dit project. Tegenwoordig specialiseer ik me in social media marketingstrategieën. Door mijn bedrijfskennis en marketingexpertise te combineren, ben ik ervan overtuigd dat we dit bedrijf kunnen laten groeien tot een succesvol merk.",
+          bio: "Ik ben Arnoldus. Ik studeerde Design and Photography aan de High School for the Arts en studeerde af in 1986. Met jarenlange ervaring in grafisch ontwerp, fotografie, marketing en kunst, breng ik dat vakmanschap mee in elk project waar ik bij betrokken raak. Tegenwoordig specialiseer ik me in social media marketingstrategieën. Door creativiteit en marketingkennis te combineren, help ik merken en projecten zichtbaar worden en verder komen.",
           tags: ["Design", "Fotografie", "Marketing", "Social media"],
           image: "/team/nol-algra.png",
         },
         {
           name: "Tim Verkuil, BSc Eng.",
           role: "Strategisch business consultant",
-          bio: "Mijn naam is Tim, ik ben 30 jaar oud. Ik woon in Utrecht, samen met mijn vriendin. Ik ben als enig kind geboren in een ondernemersgezin; mijn vader had een bouwbedrijf en mijn moeder is kunstenaar en beeldhouwer. Na het afronden van mijn bachelor Water Management in 2022 en het behalen van mijn ingenieurstitel, raakte ik betrokken bij meerdere bedrijven als strategisch business consultant. Met mijn creatieve aanpak van bedrijfsstrategie en technische kennis weet ik elk bedrijf naar een hoger niveau te tillen.",
+          bio: "Ik ben Tim en woon in Utrecht. Opgegroeid in een ondernemersgezin — mijn vader had een bouwbedrijf, mijn moeder is kunstenaar en beeldhouwer — koester ik een natuurlijke neiging tot creatief ondernemen. Na mijn bachelor Water Management in 2022 werk ik als strategisch business consultant aan uiteenlopende projecten. Met een creatieve kijk op strategie en technische kennis help ik ideeën door te vertalen naar concrete stappen.",
           tags: ["Strategie", "Engineering", "Consultancy", "Groei"],
           image: "/team/tim-verkuil.png",
         },
@@ -242,14 +242,14 @@ const en: Dictionary = {
         {
           name: "Nol Algra",
           role: "Social media marketing & creative entrepreneur",
-          bio: "I'm Arnoldus, 62 years old. I studied Design and Photography at the High School for the Arts, graduating in 1986. With years of experience setting up various companies in graphic design, photography, marketing, and art, I became involved in this project. Nowadays, I specialize in social media marketing strategies. By combining my business knowledge and marketing expertise, I'm confident that we can grow this company into a successful brand.",
+          bio: "I'm Arnoldus. I studied Design and Photography at the High School for the Arts, graduating in 1986. With years of experience in graphic design, photography, marketing, and art, I bring that craft to every project I work on. Nowadays, I specialize in social media marketing strategies. By combining creativity and marketing knowledge, I help brands and projects gain visibility and move forward.",
           tags: ["Design", "Photography", "Marketing", "Social media"],
           image: "/team/nol-algra.png",
         },
         {
           name: "Tim Verkuil, BSc Eng.",
           role: "Strategic business consultant",
-          bio: "My name is Tim, and I'm 30 years old. I live in Utrecht, the Netherlands, with my girlfriend. I was born an only child into an entrepreneurial family; my father owned a construction company, and my mother is an artist and sculptor. After completing my bachelor's degree in Water Management in 2022 and becoming an engineer, I got involved in multiple businesses as a strategic business consultant. With my creative approach to business strategy and technical knowledge, I know I can elevate any business.",
+          bio: "I'm Tim and I live in Utrecht. Raised in an entrepreneurial family — my father ran a construction company, my mother is an artist and sculptor — I have a natural drive for creative entrepreneurship. After completing my bachelor's degree in Water Management in 2022, I work as a strategic business consultant on a range of projects. With a creative approach to strategy and technical knowledge, I help turn ideas into concrete next steps.",
           tags: ["Strategy", "Engineering", "Consulting", "Growth"],
           image: "/team/tim-verkuil.png",
         },

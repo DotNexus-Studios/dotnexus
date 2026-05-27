@@ -13,6 +13,7 @@ export function Approach() {
       <div className="relative mx-auto max-w-6xl">
         <SectionLabel>{t.approach.label}</SectionLabel>
         <motion.h2
+          data-scroll-dot
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}

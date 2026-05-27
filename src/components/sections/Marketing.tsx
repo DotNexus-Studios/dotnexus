@@ -14,6 +14,7 @@ export function Marketing() {
         <div>
           <SectionLabel>{t.marketing.label}</SectionLabel>
           <motion.h2
+            data-scroll-dot
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}

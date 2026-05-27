@@ -1,9 +1,10 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { GridBackground } from "@/components/effects/GridBackground";
 import { LoadingScreen } from "@/components/effects/LoadingScreen";
 import { ScanLine } from "@/components/effects/ScanLine";
+import { ScrollProgressTrail } from "@/components/effects/ScrollProgressTrail";
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
 import { Approach } from "@/components/sections/Approach";
@@ -19,6 +20,7 @@ const VISITED_KEY = "dotnexus-visited";
 export function HomePage() {
   const [ready, setReady] = useState(false);
   const [showLoader, setShowLoader] = useState(false);
+  const progressRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     try {
@@ -54,11 +56,16 @@ export function HomePage() {
         <Header />
         <main>
           <Hero />
-          <Services />
-          <Approach />
-          <Marketing />
-          <Showcase />
-          <Cta />
+          <div ref={progressRef} className="relative isolate">
+            <ScrollProgressTrail containerRef={progressRef} />
+            <div className="relative z-10">
+              <Services />
+              <Approach />
+              <Marketing />
+              <Showcase />
+              <Cta />
+            </div>
+          </div>
         </main>
         <Footer />
       </div>

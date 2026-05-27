@@ -20,7 +20,7 @@ export function Cta() {
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(0,0,0,0.05),transparent_60%)]" />
         </div>
         <div className="relative">
-          <h2 className="text-3xl font-semibold tracking-tight sm:text-5xl">
+          <h2 data-scroll-dot className="text-3xl font-semibold tracking-tight sm:text-5xl">
             {t.cta.title}
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-muted">{t.cta.subtitle}</p>
