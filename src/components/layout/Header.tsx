@@ -7,6 +7,7 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { useLocale } from "@/context/LocaleProvider";
 import { LanguageToggle } from "@/components/ui/LanguageToggle";
+import { EmailLink } from "@/components/ui/EmailLink";
 import { Logo } from "@/components/ui/Logo";
 
 export function Header() {
@@ -75,12 +76,9 @@ export function Header() {
 
         <div className="flex items-center gap-3">
           <LanguageToggle />
-          <a
-            href={`mailto:${t.cta.email}`}
-            className="hidden rounded-full border border-border-strong bg-foreground px-4 py-2 text-sm font-medium text-background transition hover:bg-foreground/90 sm:inline-block"
-          >
+          <EmailLink className="hidden rounded-full border border-border-strong bg-foreground px-4 py-2 text-sm font-medium text-background transition hover:bg-foreground/90 sm:inline-block">
             {t.cta.button}
-          </a>
+          </EmailLink>
           <button
             type="button"
             className="flex h-10 w-10 items-center justify-center rounded-full border border-border md:hidden"

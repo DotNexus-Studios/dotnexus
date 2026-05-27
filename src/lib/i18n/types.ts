@@ -88,7 +88,6 @@ export type Dictionary = {
     title: string;
     subtitle: string;
     button: string;
-    email: string;
   };
   footer: {
     tagline: string;

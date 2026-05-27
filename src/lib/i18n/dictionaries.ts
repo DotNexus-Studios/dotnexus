@@ -202,7 +202,6 @@ const nl: Dictionary = {
     subtitle:
       "Mail ons waar je staat en wat je zoekt. Wij denken vrijblijvend mee over de slimste volgende stap.",
     button: "Stuur een e-mail",
-    email: "hello@dotnexus.nl",
   },
   footer: {
     tagline: "Growth bureau: strategie, branding, content, web en AI",
@@ -412,7 +411,6 @@ const en: Dictionary = {
     subtitle:
       "Email us where you are and what you're looking for. We'll think along, no strings attached, about the smartest next step.",
     button: "Send an email",
-    email: "hello@dotnexus.nl",
   },
   footer: {
     tagline: "Growth agency: strategy, branding, content, web, and AI",

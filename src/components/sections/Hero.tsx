@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { ArrowDownRight, ArrowRight } from "lucide-react";
 import { HeroParticleField } from "@/components/effects/HeroParticleField";
+import { EmailLink } from "@/components/ui/EmailLink";
 import { useLocale } from "@/context/LocaleProvider";
 import { AnimatedCounter } from "@/components/ui/AnimatedCounter";
 
@@ -53,13 +54,10 @@ export function Hero() {
           </motion.p>
 
           <motion.div variants={fadeUp} className="mt-10 flex flex-wrap gap-4">
-            <a
-              href={`mailto:${t.cta.email}`}
-              className="group inline-flex items-center gap-2 rounded-full bg-foreground px-6 py-3.5 text-sm font-medium text-background transition hover:bg-foreground/90"
-            >
+            <EmailLink className="group inline-flex items-center gap-2 rounded-full bg-foreground px-6 py-3.5 text-sm font-medium text-background transition hover:bg-foreground/90">
               {t.hero.ctaPrimary}
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
-            </a>
+            </EmailLink>
             <a
               href="#showcase"
               className="inline-flex items-center gap-2 rounded-full border border-border-strong px-6 py-3.5 text-sm text-foreground transition hover:border-foreground/30 hover:bg-surface"

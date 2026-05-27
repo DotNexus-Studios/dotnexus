@@ -1,5 +1,7 @@
 "use client";
 
+import { EmailLink } from "@/components/ui/EmailLink";
+import { ObfuscatedEmailText } from "@/components/ui/ObfuscatedEmailText";
 import { motion } from "framer-motion";
 import { Mail } from "lucide-react";
 import { useLocale } from "@/context/LocaleProvider";
@@ -24,14 +26,11 @@ export function Cta() {
             {t.cta.title}
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-muted">{t.cta.subtitle}</p>
-          <a
-            href={`mailto:${t.cta.email}`}
-            className="mt-10 inline-flex items-center gap-3 rounded-full bg-foreground px-8 py-4 text-sm font-medium text-background transition hover:bg-foreground/90"
-          >
+          <EmailLink className="mt-10 inline-flex items-center gap-3 rounded-full bg-foreground px-8 py-4 text-sm font-medium text-background transition hover:bg-foreground/90">
             <Mail className="h-4 w-4" />
             {t.cta.button}
-          </a>
-          <p className="mt-6 font-mono text-sm text-muted">{t.cta.email}</p>
+          </EmailLink>
+          <ObfuscatedEmailText className="mt-6 font-mono text-sm text-muted" />
         </div>
       </motion.div>
     </section>
